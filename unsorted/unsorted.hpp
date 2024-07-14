@@ -9,9 +9,12 @@ class Unsorted
     public:
         Unsorted(int range);
         void createRandomVector(int range);
-        
+        void displayVector(std::vector<int> vector);
+
         int range;
         std::vector<int> randomVector;  
+
+        bool display = false;
 };
 
 #endif //UNSORTED_HPP

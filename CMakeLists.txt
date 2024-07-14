@@ -4,4 +4,5 @@ project(sorting_algorithms)
 
 add_executable(sorting_algorithms "main.cpp" 
                                   "unsorted/unsorted.cpp"
-                                  "cpp_sort/cpp_sort.cpp")
+                                  "algorithms/cpp_sort/cpp_sort.cpp"
+                                  "algorithms/bubble_sort/bubble_sort.cpp")
