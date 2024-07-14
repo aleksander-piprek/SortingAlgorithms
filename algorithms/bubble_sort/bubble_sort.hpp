@@ -6,10 +6,11 @@
 class BubbleSort
 {
     public:
-        BubbleSort(Unsorted vector);
+        BubbleSort(std::vector<int> unsortedVector);
         void displayVector(std::vector<int> sortedVector);
 
         bool display = false;
+        bool isSwapped = false;
 };
 
 #endif //BUBBLE_SORT_HPP

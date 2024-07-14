@@ -5,12 +5,12 @@
 int main()
 {
     // Create random vector in range (1 - range)
-    Unsorted vector(1000);
+    Unsorted vector(10000);
 
     // Run sort() from STL for comparison
-    CppSort cppSort(vector);
+    CppSort cppSort(vector.randomVector);
     
     // Run Bubble Sort
-    BubbleSort BubbleSort(vector);
+    BubbleSort BubbleSort(vector.randomVector);
     return 0;
 }

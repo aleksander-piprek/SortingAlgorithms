@@ -7,7 +7,7 @@
 class CppSort
 {
     public:
-        CppSort(Unsorted vector);
+        CppSort(std::vector<int> unsortedVector);
         void displayVector(std::vector<int> sortedVector);
 
         bool display = false;
