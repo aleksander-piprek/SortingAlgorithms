@@ -12,7 +12,7 @@ class Unsorted
         void displayVector(std::vector<int> vector);
 
         int range;
-        std::vector<int> randomVector;  
+        std::vector<int> unsortedVector;  
 
         bool display = false;
 };

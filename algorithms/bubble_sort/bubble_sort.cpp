@@ -10,7 +10,7 @@ BubbleSort::BubbleSort(std::vector<int> unsortedVector)
     {
         isSwapped = false;
  
-        for(int j = 0; j < unsortedVector.size() - 1; j++)
+        for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         {
             if(unsortedVector[j] > unsortedVector[j+1])
             {

@@ -13,7 +13,7 @@ Unsorted::Unsorted(int range)
     std::cout << "Unsorted numbers in range " << range << ": " << std::endl;
 
     if(display)
-        displayVector(randomVector);
+        displayVector(unsortedVector);
 
     std::cout << std::endl << time/std::chrono::milliseconds(1) << " ms\n";
 
@@ -26,12 +26,12 @@ void Unsorted::createRandomVector(int range)
         
     while(true)
     {
-        if(randomVector.size() == range)
+        if(unsortedVector.size() == range)
             break;
 
         int random = 1 + (rand() % range);
-        if(std::find(randomVector.begin(), randomVector.end(), random) == randomVector.end())
-            randomVector.push_back(random);
+        if(std::find(unsortedVector.begin(), unsortedVector.end(), random) == unsortedVector.end())
+            unsortedVector.push_back(random);
     }
 }
 
