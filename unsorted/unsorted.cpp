@@ -7,7 +7,8 @@ Unsorted::Unsorted(int range)
     std::cout << "Unsorted numbers in range " << range << ": " << std::endl;
     for(auto& nums : randomVector)
         std::cout << nums << " ";
-    std::cout << std::endl;
+
+    std::cout << "\n\n";
 }
 
 void Unsorted::createRandomVector(int range)
