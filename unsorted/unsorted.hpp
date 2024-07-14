@@ -1,6 +1,7 @@
-#pragma once
-#include <iostream>
-#include <vector>
+#ifndef UNSORTED_HPP
+#define UNSORTED_HPP
+
+#include "../common/common.hpp"
 #include <algorithm>
 
 class Unsorted
@@ -12,3 +13,5 @@ class Unsorted
         int range;
         std::vector<int> randomVector;  
 };
+
+#endif //UNSORTED_HPP
