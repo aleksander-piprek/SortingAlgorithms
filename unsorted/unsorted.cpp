@@ -1,7 +1,7 @@
 #include "unsorted.hpp"
 
-Unsorted::Unsorted(int range)
-    : range(range)
+Unsorted::Unsorted(int range, bool displayValues)
+    : range(range), isDisplay(displayValues)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -10,12 +10,12 @@ Unsorted::Unsorted(int range)
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
     
-    std::cout << "Unsorted numbers in range " << range << ": " << std::endl;
+    std::cout << "Unsorted numbers in range 1 - " << range << ": " << std::endl;
 
-    if(display)
+    if(isDisplay)
         displayVector(unsortedVector);
 
-    std::cout << std::endl << time/std::chrono::milliseconds(1) << " ms\n";
+    std::cout << time/std::chrono::milliseconds(1) << " ms\n";
 
     std::cout << "\n\n";
 }
@@ -39,4 +39,5 @@ void Unsorted::displayVector(std::vector<int> vector)
 {
     for(auto& nums : vector)
         std::cout << nums << " ";
+    std::cout << "\n";
 }

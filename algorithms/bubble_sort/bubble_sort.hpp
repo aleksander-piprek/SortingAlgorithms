@@ -3,14 +3,17 @@
 
 #include "../../unsorted/unsorted.hpp"
 
-class BubbleSort
+namespace Algorithms
 {
-    public:
-        BubbleSort(std::vector<int> unsortedVector);
-        void displayVector(std::vector<int> sortedVector);
+    class BubbleSort
+    {
+        public:
+            BubbleSort(std::vector<int> unsortedVector, bool isDisplay);
+            void displayVector(std::vector<int> sortedVector);
 
-        bool display = false;
-        bool isSwapped = false;
-};
+            bool isDisplay;
+            bool isSwapped = false;
+    };
+}
 
 #endif //BUBBLE_SORT_HPP

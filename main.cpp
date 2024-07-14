@@ -1,16 +1,15 @@
-#include "unsorted/unsorted.hpp"
-#include "algorithms/cpp_sort/cpp_sort.hpp"
-#include "algorithms/bubble_sort/bubble_sort.hpp"
+#include "commons/sorting_algorithms.hpp"
 
 int main()
 {
     // Create random vector in range (1 - range)
-    Unsorted vector(5000);
+    Unsorted vector(5000, isDisplay);
 
     // Sort() from STL for comparison
-    CppSort cppSort(vector.unsortedVector);
+    Algorithms::CppSort cppSort(vector.unsortedVector, isDisplay);
     
     // Bubble Sort
-    BubbleSort BubbleSort(vector.unsortedVector);
+    Algorithms::BubbleSort BubbleSort(vector.unsortedVector, isDisplay);
+
     return 0;
 }
