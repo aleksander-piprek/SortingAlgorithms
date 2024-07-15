@@ -10,9 +10,9 @@ namespace Algorithms
         public:
             BubbleSort(std::vector<int> unsortedVector);
             void displayVector(std::vector<int> sortedVector);
+            bool isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector);
 
             bool isSwapped = false;
-
             bool isDisplay = showNumbers;            
     };
 }

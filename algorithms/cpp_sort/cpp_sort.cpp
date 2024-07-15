@@ -9,6 +9,8 @@ Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
 
+    correct = unsortedVector;
+
     std::cout << "cpp sort(): " << std::endl;
 
     if(isDisplay)

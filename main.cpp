@@ -1,4 +1,6 @@
-#include "commons/sorting_algorithms.hpp"
+#include "commons/common.hpp"
+#include "algorithms/bubble_sort/bubble_sort.hpp"
+#include "algorithms/cpp_sort/cpp_sort.hpp"
 
 int main()
 {
