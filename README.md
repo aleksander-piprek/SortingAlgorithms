@@ -9,12 +9,15 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | Algorithm   	| Best 	| Average 	| Worst 
 |-------------	|------	|---------	|--------
 | Bubble Sort 	| O(n) 	| O(n^2)  	| O(n^2)
+| Insertion Sort| O(n) 	| O(n^2)  	| O(n^2)
+
 
 ## Average times for randomly distributed vector of size 10,000:
 | Algorithm   	| Average |
 |-------------	|------	  |
-| std::sort()	| ~ 3 ms  |	
-| bubble_sort   | ~ 2.6 s |
+| std::sort()	| ~ 1 ms  |	
+| bubble_sort   | ~ 713 s |
+| insertion_sort| ~ 136 ms|
 
 ## TODO:
 * New algorithms,

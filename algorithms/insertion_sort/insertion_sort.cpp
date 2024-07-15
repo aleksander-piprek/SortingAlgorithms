@@ -8,7 +8,7 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
     std::vector<int> sortedVector = sort(unsortedVector);
 
-    if(isCorrect(unsortedVector, correct))
+    if(isCorrect(sortedVector, correct))
         std::cout << "[OK]\n";
     else
         std::cout << "[Error]\n";
@@ -17,7 +17,7 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     auto time = end_time - start_time;
 
     if(printVector)
-        displayVector(unsortedVector);
+        displayVector(sortedVector);
 
     std::cout << time/std::chrono::milliseconds(1) << " ms\n";
 
@@ -26,7 +26,29 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
 std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector)
 {
+    for(int i = 1; i <= unsortedVector.size(); i++)
+    {
+        for(int j = i - 1; j >= 0; j--)
+        {
+            if(unsortedVector[i] < unsortedVector[j])
+            {
+                if(j == 0)
+                {
+                    unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                    unsortedVector.erase(unsortedVector.begin() + i + 1);
+                    break;
+                }
 
+                if(unsortedVector[i] > unsortedVector[j-1])
+                {
+                    unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                    unsortedVector.erase(unsortedVector.begin() + i + 1);
+                    break;
+                }
+            }     
+        }
+    }
+    
     return unsortedVector;
 }
 
