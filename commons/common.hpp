@@ -6,4 +6,6 @@
 #include <chrono>
 #include <algorithm>
 
+const bool showNumbers = true;
+
 #endif //COMMON_HPP

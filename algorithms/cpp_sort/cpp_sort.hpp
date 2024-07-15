@@ -1,17 +1,17 @@
 #ifndef CPP_SORT_HPP
 #define CPP_SORT_HPP
 
-#include "../../unsorted/unsorted.hpp"
+#include "../../random/random.hpp"
 
 namespace Algorithms
 {
     class CppSort
     {
         public:
-            CppSort(std::vector<int> unsortedVector, bool displayValues);
+            CppSort(std::vector<int> unsortedVector);
             void displayVector(std::vector<int> sortedVector);
 
-            bool isDisplay;
+            bool isDisplay = showNumbers;
     };
 }
 

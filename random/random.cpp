@@ -1,7 +1,7 @@
-#include "unsorted.hpp"
+#include "random.hpp"
 
-Unsorted::Unsorted(int range, bool displayValues)
-    : range(range), isDisplay(displayValues)
+Random::Random(int range)
+    : range(range)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -10,7 +10,7 @@ Unsorted::Unsorted(int range, bool displayValues)
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
     
-    std::cout << "Unsorted numbers in range 1 - " << range << ": " << std::endl;
+    std::cout << "Randomly distributed numbers in range 1 - " << range << ": " << std::endl;
 
     if(isDisplay)
         displayVector(unsortedVector);
@@ -20,7 +20,7 @@ Unsorted::Unsorted(int range, bool displayValues)
     std::cout << "\n\n";
 }
 
-void Unsorted::createRandomVector(int range)
+void Random::createRandomVector(int range)
 {
     srand((unsigned) time(NULL));
         
@@ -35,7 +35,7 @@ void Unsorted::createRandomVector(int range)
     }
 }
 
-void Unsorted::displayVector(std::vector<int> vector)
+void Random::displayVector(std::vector<int> vector)
 {
     for(auto& nums : vector)
         std::cout << nums << " ";

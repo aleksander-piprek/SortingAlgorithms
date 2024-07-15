@@ -3,10 +3,10 @@
 
 #include "../commons/common.hpp"
 
-class Unsorted
+class Random
 {
     public:
-        Unsorted(int range, bool displayValues);
+        Random(int range);
         void displayVector(std::vector<int> vector);
 
         void createRandomVector(int range);
@@ -14,7 +14,7 @@ class Unsorted
         int range;
         std::vector<int> unsortedVector;  
 
-        bool isDisplay;
+        bool isDisplay = showNumbers;
 };
 
 #endif //UNSORTED_HPP

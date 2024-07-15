@@ -1,6 +1,6 @@
 #include "cpp_sort.hpp"
 
-Algorithms::CppSort::CppSort(std::vector<int> unsortedVector, bool isDisplay)
+Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 

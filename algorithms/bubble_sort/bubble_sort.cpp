@@ -1,6 +1,6 @@
 #include "bubble_sort.hpp"
 
-Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector, bool isDisplay)
+Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
 {
     std::cout << "Bubble sort: " << std::endl;
 
