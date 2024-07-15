@@ -10,8 +10,6 @@ namespace Algorithms
         public:
             CppSort(std::vector<int> unsortedVector);
             void displayVector(std::vector<int> sortedVector);
-
-            bool isDisplay = showNumbers;
     };
 }
 

@@ -12,7 +12,7 @@ Random::Random(int range)
     
     std::cout << "Randomly distributed numbers in range 1 - " << range << ": " << std::endl;
 
-    if(isDisplay)
+    if(printVector)
         displayVector(unsortedVector);
 
     std::cout << time/std::chrono::milliseconds(1) << " ms\n";

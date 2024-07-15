@@ -13,7 +13,7 @@ Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
 
     std::cout << "cpp sort(): " << std::endl;
 
-    if(isDisplay)
+    if(printVector)
         displayVector(unsortedVector);
 
     std::cout << time/std::chrono::milliseconds(1) << " ms\n";

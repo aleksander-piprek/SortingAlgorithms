@@ -6,7 +6,7 @@
 #include <chrono>
 #include <algorithm>
 
-const bool showNumbers = false;
+extern bool printVector;
 extern std::vector<int> correct;
 
 #endif //COMMON_HPP

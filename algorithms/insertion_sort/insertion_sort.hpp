@@ -1,21 +1,19 @@
-#ifndef BUBBLE_SORT_HPP
-#define BUBBLE_SORT_HPP
+#ifndef INSERTION_SORT_HPP
+#define INSERTION_SORT_HPP
 
 #include "../../random/random.hpp"
 
 namespace Algorithms
 {
-    class BubbleSort
+    class InsertionSort
     {
         public:
-            BubbleSort(std::vector<int> unsortedVector);
-
+            InsertionSort(std::vector<int> unsortedVector);
+            
             std::vector<int> sort(std::vector<int> unsortedVector);
             void displayVector(std::vector<int> sortedVector);
             bool isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector);
-
-            bool isSwapped = false;   
     };
 }
 
-#endif //BUBBLE_SORT_HPP
+#endif //INSERTION_SORT_HPP

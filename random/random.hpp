@@ -13,8 +13,6 @@ class Random
 
         int range;
         std::vector<int> unsortedVector;  
-
-        bool isDisplay = showNumbers;
 };
 
 #endif //UNSORTED_HPP
