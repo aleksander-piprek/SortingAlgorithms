@@ -1,18 +1,18 @@
 #ifndef SELECTION_SORT_HPP
 #define SELECTION_SORT_HPP
 
-#include "../../random/random.hpp"
+#include "../../commons/algorithm.hpp"
 
 namespace Algorithms
 {
-    class SelectionSort
+    class SelectionSort : public Algorithm
     {
         public:
             SelectionSort(std::vector<int> unsortedVector);
             
             std::vector<int> sort(std::vector<int> unsortedVector);
-            void displayVector(std::vector<int> sortedVector);
-            bool isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector);
+
+            std::vector<int> sortedVector;
     };
 }
 

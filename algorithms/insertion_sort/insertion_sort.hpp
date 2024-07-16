@@ -2,7 +2,6 @@
 #define INSERTION_SORT_HPP
 
 #include "../../commons/algorithm.hpp"
-#include "../../visualise/visualiser.hpp"
 
 namespace Algorithms
 {
@@ -13,6 +12,8 @@ namespace Algorithms
             InsertionSort(std::vector<int> unsortedVector);
             
             std::vector<int> sort(std::vector<int> unsortedVector) override;
+
+            std::vector<int> sortedVector;
     };
 }
 

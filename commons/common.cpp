@@ -1,8 +1,7 @@
 #include "common.hpp"
 
-bool printVector = false;
-int vectorSize = 10000;
+int vectorSize = 1000;
 
-bool visualise = false;
+SimulationMode simulationMode = test;
 
 std::vector<int> correct;

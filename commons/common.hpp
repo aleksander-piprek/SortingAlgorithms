@@ -6,10 +6,16 @@
 #include <chrono>
 #include <algorithm>
 
-extern bool printVector;
-extern int vectorSize;
+enum SimulationMode
+{
+    test,
+    print,
+    animate
+};
 
-extern bool visualise;
+extern SimulationMode simulationMode;
+
+extern int vectorSize;
 
 extern std::vector<int> correct;
 

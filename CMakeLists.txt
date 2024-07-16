@@ -15,7 +15,6 @@ add_executable(sorting_algorithms "main.cpp"
                                   "algorithms/cpp_sort/cpp_sort.cpp"
                                   "algorithms/bubble_sort/bubble_sort.cpp"
                                   "algorithms/insertion_sort/insertion_sort.cpp"
-                                  "algorithms/selection_sort/selection_sort.cpp"
-                                  "visualise/visualiser.cpp")
+                                  "algorithms/selection_sort/selection_sort.cpp")
 
 target_link_libraries(sorting_algorithms sfml-graphics sfml-audio sfml-system)

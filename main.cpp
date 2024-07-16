@@ -3,7 +3,6 @@
 #include "algorithms/cpp_sort/cpp_sort.hpp"
 #include "algorithms/insertion_sort/insertion_sort.hpp"
 #include "algorithms/selection_sort/selection_sort.hpp"
-#include "visualise/visualiser.hpp"
 
 int main()
 {

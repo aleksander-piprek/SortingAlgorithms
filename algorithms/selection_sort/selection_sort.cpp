@@ -2,45 +2,45 @@
 
 Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
 {
-    std::cout << "Selection sort: ";
+    switch(simulationMode)
+    {
+        case test:
+        {
+            sortedVector = sort(unsortedVector);
+            std::cout << std::endl;            
+            break;
+        }
 
-    auto start_time = std::chrono::high_resolution_clock::now();
+        case print: 
+        {
+            sortedVector = sort(unsortedVector);
+            displayVector(sortedVector);
+            std::cout << std::endl;            
+            break;
+        }
 
-    std::vector<int> sortedVector = sort(unsortedVector);
-
-    auto end_time = std::chrono::high_resolution_clock::now();
-    auto time = end_time - start_time;
-
-    if(isCorrect(sortedVector, correct))
-        std::cout << "[OK]\n";
-    else
-        std::cout << "[Error]\n";
-
-    if(printVector)
-        displayVector(sortedVector);
-
-    std::cout << time/std::chrono::milliseconds(1) << " ms\n";
-
-    std::cout << "\n\n";
+        case animate:
+        {
+            break;
+        }
+    }    
 }
 
 std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector)
 {
+    std::cout << "Selection sort: ";
+        
+    auto start_time = std::chrono::high_resolution_clock::now();
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto time = end_time - start_time;
+    
+    if(unsortedVector == correct)
+        std::cout << "[OK]\n";
+    else
+        std::cout << "[Error]\n";
+
+    std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
     return unsortedVector;
-}
-
-void Algorithms::SelectionSort::displayVector(std::vector<int> sortedVector)
-{
-    for(auto& nums : sortedVector)
-        std::cout << nums << " ";
-    std::cout << "\n";
-}
-
-bool Algorithms::SelectionSort::isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector)
-{
-    if(sortedVector == correctVector)
-        return true;
-    else
-        return false;
 }

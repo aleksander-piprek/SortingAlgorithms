@@ -7,7 +7,6 @@ class Random
 {
     public:
         Random(int range);
-        void displayVector(std::vector<int> vector);
 
         void createRandomVector(int range);
 
