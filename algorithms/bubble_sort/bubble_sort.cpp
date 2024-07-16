@@ -1,6 +1,7 @@
 #include "bubble_sort.hpp"
 
 Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
+    : unsortedVector_(unsortedVector)
 {
     switch(simulationMode)
     {
@@ -21,6 +22,7 @@ Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
 
         case animate:
         {
+            visualise(unsortedVector);
             break;
         }
     }    
@@ -59,4 +61,28 @@ std::vector<int> Algorithms::BubbleSort::sort(std::vector<int> unsortedVector)
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
     return unsortedVector;
+}
+
+std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVector, int i, int j)
+{
+    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
+    {
+        if(unsortedVector[j] > unsortedVector[j+1])
+        {
+            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+        }
+    }
+
+    return unsortedVector;
+}
+
+std::vector<int> Algorithms::BubbleSort::getUnsortedVector()
+{
+    return unsortedVector_;
+}
+
+void Algorithms::BubbleSort::visualise(std::vector<int> unsortedVector)
+{
+    Visualiser visualise(this);
+    visualise.run(this);
 }

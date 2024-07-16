@@ -1,6 +1,7 @@
 #include "cpp_sort.hpp"
 
 Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
+    : unsortedVector_(unsortedVector)
 {
     switch(simulationMode)
     {
@@ -23,6 +24,7 @@ Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
 
         case animate:
         {
+            correct = sort(unsortedVector);
             break;
         }
     }
@@ -40,4 +42,14 @@ std::vector<int> Algorithms::CppSort::sort(std::vector<int> unsortedVector)
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";   
 
     return unsortedVector;
+}
+
+std::vector<int> Algorithms::CppSort::stepSort(std::vector<int> unsortedVector, int i, int j)
+{
+    return std::vector<int>();
+}
+
+std::vector<int> Algorithms::CppSort::getUnsortedVector()
+{
+    return unsortedVector_;
 }

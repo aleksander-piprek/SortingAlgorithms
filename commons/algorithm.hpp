@@ -11,26 +11,29 @@ namespace Algorithms
         public:
             virtual ~Algorithm() = 0;
             virtual std::vector<int> sort(std::vector<int> unsortedVector) = 0;
+            virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int i, int j) = 0;
+            virtual std::vector<int> getUnsortedVector() = 0;
+
             void displayVector(std::vector<int> sortedVector);       
     };
 }
 
-class Visualiser {
-public:
-    Visualiser(std::vector<int> unsortedVector);
-    void run();
-    void stepSort();
+class Visualiser
+{
+    public:
+        Visualiser(Algorithms::Algorithm* algorithm);
+        void run(Algorithms::Algorithm* algorithm);
 
-private:
-    void draw();
-    sf::RenderWindow window;
-    std::vector<int> data;
-    float barWidth;
-    bool sorting;
-    int i = 0;
-    int j = 0;
-    int width = 1280; 
-    int height = 720;
+    private:
+        void draw();
+        sf::RenderWindow window;
+        std::vector<int> data;
+        float barWidth;
+        bool sorting = true;
+        int i = 0;
+        int j = 0;
+        int width = 1280; 
+        int height = 720;
 };
 
 #endif //ALGORITHM_HPP

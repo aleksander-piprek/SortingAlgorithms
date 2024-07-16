@@ -2,6 +2,6 @@
 
 int vectorSize = 1000;
 
-SimulationMode simulationMode = test;
+SimulationMode simulationMode = animate;
 
 std::vector<int> correct;

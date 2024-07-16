@@ -9,16 +9,16 @@ void Algorithms::Algorithm::displayVector(std::vector<int> sortedVector)
     std::cout << "\n";
 }
 
-Visualiser::Visualiser(std::vector<int> unsortedVector)
+Visualiser::Visualiser(Algorithms::Algorithm* algorithm)
     :   window(sf::VideoMode(1280, 720), "Sorting Visualizer")
 {
     // sorting = visualise;
-    data = unsortedVector;
+    data = algorithm->getUnsortedVector();
     barWidth = (float)width / (float)vectorSize;
     
 }
 
-void Visualiser::run()
+void Visualiser::run(Algorithms::Algorithm* algorithm)
 {
     while (window.isOpen()) 
     {
@@ -26,35 +26,12 @@ void Visualiser::run()
         while (window.pollEvent(event)) 
             if (event.type == sf::Event::Closed)
                 window.close();
-
+        
+        ++i;
         if(sorting)
-            stepSort();
+            data = algorithm->stepSort(data, i, j);
 
         draw();
-    }
-}
-
-void Visualiser::stepSort()
-{
-    if (i < data.size() - 1) 
-    {
-        if (j < data.size() - i - 1) 
-        {
-            if (data[j] > data[j + 1]) 
-            {
-                std::swap(data[j], data[j + 1]);
-            }
-            ++j;
-        } 
-        else 
-        {
-            j = 0;
-            ++i;
-        }
-    } 
-    else 
-    {
-        sorting = false;
     }
 }
 
@@ -65,7 +42,7 @@ void Visualiser::draw()
     for (size_t k = 0; k < data.size(); ++k) 
     {
         sf::RectangleShape bar;
-        bar.setSize(sf::Vector2f(barWidth - 1, ((float)data[k]) / vectorSize * height));
+        bar.setSize(sf::Vector2f(barWidth, ((float)data[k]) / vectorSize * height));
         bar.setPosition(k * barWidth, height - bar.getSize().y);
         bar.setFillColor(sf::Color::White);
         window.draw(bar);
