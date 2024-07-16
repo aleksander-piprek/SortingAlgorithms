@@ -7,6 +7,8 @@
 #include <algorithm>
 
 extern bool printVector;
+extern int vectorSize;
+
 extern std::vector<int> correct;
 
 #endif //COMMON_HPP
