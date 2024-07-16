@@ -1,4 +1,4 @@
-# SortingAlgorithms
+# Sorting Algorithms
 Repository is dedicated to create a simple framework to test sorting algorithms. To use the early version of the framework:
 
 1. Create *Random* object with range passed as a parameter to create a random vector of integers in the specified range
@@ -20,6 +20,12 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | insertion_sort| ~ 136 ms|
 
 ## TODO:
-* New algorithms,
+* New algorithms:
+  - [x] Bubble Sort
+  - [x] Insertion Sort
+  - [ ] Selection Sort
+  - [ ] Merge Sort
+  - [ ] Quick Sort
+  - [ ] Heap Sort
 * Time and memory complexity and usage,
 * GUI to present visually sorting in real time (QT);
