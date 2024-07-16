@@ -1,15 +1,16 @@
 #ifndef CPP_SORT_HPP
 #define CPP_SORT_HPP
 
-#include "../../random/random.hpp"
+#include "../../commons/algorithm.hpp"
 
 namespace Algorithms
 {
-    class CppSort
+    class CppSort : public Algorithm
     {
         public:
             CppSort(std::vector<int> unsortedVector);
-            void displayVector(std::vector<int> sortedVector);
+
+            std::vector<int> sort(std::vector<int> unsortedVector) override;
     };
 }
 

@@ -8,13 +8,13 @@ Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
 
     std::vector<int> sortedVector = sort(unsortedVector);
 
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto time = end_time - start_time;
+
     if(isCorrect(sortedVector, correct))
         std::cout << "[OK]\n";
     else
         std::cout << "[Error]\n";
-
-    auto end_time = std::chrono::high_resolution_clock::now();
-    auto time = end_time - start_time;
 
     if(printVector)
         displayVector(sortedVector);

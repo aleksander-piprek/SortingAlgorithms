@@ -10,11 +10,12 @@ find_package(SFML 2.5 COMPONENTS graphics audio system REQUIRED)
 
 add_executable(sorting_algorithms "main.cpp" 
                                   "commons/common.cpp"
+                                  "commons/algorithm.cpp"
                                   "random/random.cpp"
                                   "algorithms/cpp_sort/cpp_sort.cpp"
                                   "algorithms/bubble_sort/bubble_sort.cpp"
                                   "algorithms/insertion_sort/insertion_sort.cpp"
                                   "algorithms/selection_sort/selection_sort.cpp"
-                                  "visualise/sorting_visualiser.cpp")
+                                  "visualise/visualiser.cpp")
 
 target_link_libraries(sorting_algorithms sfml-graphics sfml-audio sfml-system)

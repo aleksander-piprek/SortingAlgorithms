@@ -1,18 +1,18 @@
 #ifndef BUBBLE_SORT_HPP
 #define BUBBLE_SORT_HPP
 
-#include "../../random/random.hpp"
+#include "../../commons/algorithm.hpp"
+#include "../../visualise/visualiser.hpp"
 
 namespace Algorithms
 {
-    class BubbleSort
+    class BubbleSort : public Algorithm
     {
+        friend class Visualiser;
         public:
             BubbleSort(std::vector<int> unsortedVector);
 
-            std::vector<int> sort(std::vector<int> unsortedVector);
-            void displayVector(std::vector<int> sortedVector);
-            bool isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector);
+            std::vector<int> sort(std::vector<int> unsortedVector) override;
 
             bool isSwapped = false;   
     };

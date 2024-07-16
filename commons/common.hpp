@@ -9,6 +9,8 @@
 extern bool printVector;
 extern int vectorSize;
 
+extern bool visualise;
+
 extern std::vector<int> correct;
 
 #endif //COMMON_HPP

@@ -8,7 +8,7 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
     std::vector<int> sortedVector = sort(unsortedVector);
 
-    if(isCorrect(sortedVector, correct))
+    if(sortedVector == correct)
         std::cout << "[OK]\n";
     else
         std::cout << "[Error]\n";
@@ -50,19 +50,4 @@ std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector
     }
     
     return unsortedVector;
-}
-
-void Algorithms::InsertionSort::displayVector(std::vector<int> sortedVector)
-{
-    for(auto& nums : sortedVector)
-        std::cout << nums << " ";
-    std::cout << "\n";
-}
-
-bool Algorithms::InsertionSort::isCorrect(std::vector<int> sortedVector, std::vector<int> correctVector)
-{
-    if(sortedVector == correctVector)
-        return true;
-    else
-        return false;
 }

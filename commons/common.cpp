@@ -1,5 +1,8 @@
 #include "common.hpp"
 
 bool printVector = false;
-int vectorSize = 100;
+int vectorSize = 10000;
+
+bool visualise = false;
+
 std::vector<int> correct;
