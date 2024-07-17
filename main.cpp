@@ -4,6 +4,7 @@
 #include "algorithms/insertion_sort/insertion_sort.hpp"
 #include "algorithms/selection_sort/selection_sort.hpp"
 #include "algorithms/cocktail_sort/cocktail_sort.hpp"
+#include "algorithms/merge_sort/merge_sort.hpp"
 
 int main()
 {
@@ -12,7 +13,7 @@ int main()
         std::cout << "Error in loading config\n";
         return 1;
     }
-    
+
     // Create random vector in range (1 - range)
     Random vector(vectorSize);
 
@@ -30,5 +31,8 @@ int main()
     
     // Cocktail Sort
     Algorithms::CocktailSort CocktailSort(vector.unsortedVector);
+
+    // Cocktail Sort
+    Algorithms::MergeSort MergeSort(vector.unsortedVector);    
     return 0;
 }

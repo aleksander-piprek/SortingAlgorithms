@@ -1,7 +1,7 @@
 #include "cocktail_sort.hpp"
 
 Algorithms::CocktailSort::CocktailSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector)
+    : unsortedVector_(unsortedVector), name_ ("Cocktail Shaker Sort")
 {
     switch(simulationMode)
     {
@@ -73,7 +73,13 @@ std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
 }
 
 std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
-{
+{    
+    if(i == vectorSize)
+    {
+        sorting = false;
+        return unsortedVector;
+    }    
+    
     for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         if(unsortedVector[j] > unsortedVector[j+1])
             iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
@@ -85,11 +91,6 @@ std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVec
     ++i;
 
     return unsortedVector;
-}
-
-std::vector<int> Algorithms::CocktailSort::getUnsortedVector()
-{
-    return unsortedVector_;
 }
 
 void Algorithms::CocktailSort::visualise(std::vector<int> unsortedVector)

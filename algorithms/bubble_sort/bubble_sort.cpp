@@ -1,7 +1,7 @@
 #include "bubble_sort.hpp"
 
 Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector)
+    : unsortedVector_(unsortedVector), name_ ("BubbleSort")
 {
     switch(simulationMode)
     {
@@ -82,11 +82,6 @@ std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVecto
     ++i;
 
     return unsortedVector;
-}
-
-std::vector<int> Algorithms::BubbleSort::getUnsortedVector()
-{
-    return unsortedVector_;
 }
 
 void Algorithms::BubbleSort::visualise(std::vector<int> unsortedVector)

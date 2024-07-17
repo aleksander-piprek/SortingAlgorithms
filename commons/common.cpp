@@ -10,7 +10,7 @@ std::vector<int> correct;
 
 bool loadConfig()
 {
-    std::ifstream in("../config/default.cfg");
+    std::ifstream in(configPath);
     if (!in.is_open())
     {
         return false;

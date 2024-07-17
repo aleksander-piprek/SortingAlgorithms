@@ -5,6 +5,7 @@
 #include <vector>
 #include <chrono>
 #include <algorithm>
+#include <string>
 
 enum SimulationMode
 {
@@ -14,8 +15,9 @@ enum SimulationMode
 };
 
 extern SimulationMode simulationMode;
-
 extern int vectorSize;
+
+const char configPath[] = "../config/debug.cfg";
 
 extern std::vector<int> correct;
 

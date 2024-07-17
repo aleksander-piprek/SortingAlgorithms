@@ -10,12 +10,9 @@ void Algorithms::Algorithm::displayVector(std::vector<int> sortedVector)
 }
 
 Visualiser::Visualiser(Algorithms::Algorithm* algorithm)
-    :   window(sf::VideoMode(1280, 720), "Sorting Visualizer")
+    :   window(sf::VideoMode(1280, 720), "Sorting Visualizer"), data(algorithm->getUnsortedVector()), algorithmName(algorithm->getName())
 {
-    // sorting = visualise;
-    data = algorithm->getUnsortedVector();
     barWidth = (float)width / (float)vectorSize;
-    
 }
 
 void Visualiser::run(Algorithms::Algorithm* algorithm)
@@ -43,6 +40,16 @@ void Visualiser::draw()
 {
     window.clear(sf::Color::Black);
 
+    sf::Font font;
+    if (!font.loadFromFile("../data/ibm-dos-vga-9x16.ttf"))
+        std::cout << "Font could not be loaded\n";
+
+    sf::Text text;
+    text.setFont(font);
+    text.setString(algorithmName);
+    text.setCharacterSize(18);
+    text.setFillColor(sf::Color::White);    
+
     for (size_t k = 0; k < data.size(); ++k) 
     {
         sf::RectangleShape bar;
@@ -50,6 +57,9 @@ void Visualiser::draw()
         bar.setPosition(k * barWidth, height - bar.getSize().y);
         bar.setFillColor(sf::Color::White);
         window.draw(bar);
+
+   
+        window.draw(text);
     }
 
     window.display();

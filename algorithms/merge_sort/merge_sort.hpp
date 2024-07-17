@@ -1,19 +1,19 @@
-#ifndef COCKTAIL_SORT_HPP
-#define COCKTAIL_SORT_HPP
+#ifndef MERGE_SORT_HPP
+#define MERGE_SORT_HPP
 
 #include "../../commons/algorithm.hpp"
 
 namespace Algorithms
 {
-    class CocktailSort : public Algorithm
+    class MergeSort : public Algorithm
     {
         std::vector<int> unsortedVector_;        
         std::string name_;
 
         public:
-            CocktailSort(std::vector<int> unsortedVector);
-
-            std::vector<int> sort(std::vector<int> unsortedVector) override;
+            MergeSort(std::vector<int> unsortedVector);
+            
+            std::vector<int> sort(std::vector<int> unsortedVector);
             std::vector<int> stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting) override;
 
             std::vector<int> getUnsortedVector() override {return unsortedVector_;}
@@ -21,10 +21,12 @@ namespace Algorithms
 
             void visualise(std::vector<int> unsortedVector);
 
-            std::vector<int> sortedVector;
 
-            bool isSwapped = false;
+            std::vector<int> mergeSort(std::vector<int> unsortedVector);
+            std::vector<int> merge();
+
+            std::vector<int> sortedVector;
     };
 }
 
-#endif //COCKTAIL_SORT_HPP
+#endif //MERGE_SORT_HPP

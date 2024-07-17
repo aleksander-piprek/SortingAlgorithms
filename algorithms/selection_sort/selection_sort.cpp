@@ -1,7 +1,7 @@
 #include "selection_sort.hpp"
 
 Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector)
+    : unsortedVector_(unsortedVector), name_ ("SelectionSort")
 {
     switch(simulationMode)
     {
@@ -63,6 +63,12 @@ std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector
 
 std::vector<int> Algorithms::SelectionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
+    if(i == vectorSize)
+    {
+        sorting = false;
+        return unsortedVector;
+    }    
+    
     int min = unsortedVector[i];
     int temp = min;
 
@@ -77,11 +83,6 @@ std::vector<int> Algorithms::SelectionSort::stepSort(std::vector<int> unsortedVe
     ++i;
 
     return unsortedVector;
-}
-
-std::vector<int> Algorithms::SelectionSort::getUnsortedVector()
-{
-    return unsortedVector_;
 }
 
 void Algorithms::SelectionSort::visualise(std::vector<int> unsortedVector)
