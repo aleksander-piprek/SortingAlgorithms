@@ -63,10 +63,16 @@ std::vector<int> Algorithms::BubbleSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVector, int i, int j)
+std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
-    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
+    for(int j = 0; j < unsortedVector.size() - i; j++)
     {
+        if(i > vectorSize)
+        {
+            sorting = false;
+            break;
+        }
+
         if(unsortedVector[j] > unsortedVector[j+1])
         {
             iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     

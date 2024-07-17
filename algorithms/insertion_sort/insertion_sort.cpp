@@ -1,6 +1,7 @@
 #include "insertion_sort.hpp"
 
 Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
+    : unsortedVector_(unsortedVector)
 {
     switch(simulationMode)
     {
@@ -21,6 +22,7 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
         case animate:
         {
+            visualise(unsortedVector);            
             break;
         }
     }    
@@ -66,4 +68,28 @@ std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
     return unsortedVector;
+}
+
+std::vector<int> Algorithms::InsertionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+{
+    for(int j = 0; j < unsortedVector.size() - i; j++)
+    {
+        if(unsortedVector[j] > unsortedVector[j+1])
+        {
+            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+        }
+    }
+
+    return unsortedVector;
+}
+
+std::vector<int> Algorithms::InsertionSort::getUnsortedVector()
+{
+    return unsortedVector_;
+}
+
+void Algorithms::InsertionSort::visualise(std::vector<int> unsortedVector)
+{
+    Visualiser visualise(this);
+    visualise.run(this);
 }

@@ -28,11 +28,5 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
   - [ ] Merge Sort
   - [ ] Quick Sort
   - [ ] Heap Sort
-* Time and memory complexity and usage,
-* GUI to present visually sorting in real time (QT);
-
-## TODO:
-* New algorithms,
-* Write automated tests to check for average time
-* Time and memory complexity and usage,
-* GUI to present visually sorting in real time (QT);
+* Time and memory complexity and usage
+* Display more information in GUI

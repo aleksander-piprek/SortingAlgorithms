@@ -26,10 +26,15 @@ void Visualiser::run(Algorithms::Algorithm* algorithm)
         while (window.pollEvent(event)) 
             if (event.type == sf::Event::Closed)
                 window.close();
-        
+            else if(!sorting)
+            {
+                event.type == sf::Event::Closed;
+                window.close();
+            }                
+                
         ++i;
         if(sorting)
-            data = algorithm->stepSort(data, i, j);
+            data = algorithm->stepSort(data, i, j, sorting);
 
         draw();
     }

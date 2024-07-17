@@ -15,8 +15,8 @@ int main()
     // Bubble Sort
     Algorithms::BubbleSort BubbleSort(vector.unsortedVector);
 
-    // // Insertion Sort
-    // Algorithms::InsertionSort InsertionSort(vector.unsortedVector);
+    // Insertion Sort
+    Algorithms::InsertionSort InsertionSort(vector.unsortedVector);
     
     // // Selection Sort
     // Algorithms::SelectionSort SelectionSort(vector.unsortedVector);

@@ -11,7 +11,7 @@ namespace Algorithms
         public:
             virtual ~Algorithm() = 0;
             virtual std::vector<int> sort(std::vector<int> unsortedVector) = 0;
-            virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int i, int j) = 0;
+            virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting) = 0;
             virtual std::vector<int> getUnsortedVector() = 0;
 
             void displayVector(std::vector<int> sortedVector);       
