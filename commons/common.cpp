@@ -94,4 +94,5 @@ void createRainbow()
         float hue = i * hueIncrement;
         rainbow[i] = hsvToRgb(hue, 1.0f, 1.0f); 
     }
+    std::cout<<"check";
 }

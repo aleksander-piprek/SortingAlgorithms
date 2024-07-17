@@ -22,7 +22,9 @@ namespace Algorithms
             void visualise(std::vector<int> unsortedVector);
 
             std::vector<int> mergeSort(std::vector<int> unsortedVector);
-            std::vector<int> merge();
+            std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide);
+
+            std::vector<int> sortedVector;      
     };
 }
 

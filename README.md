@@ -57,5 +57,3 @@ $ cmake --build .
   
 * Time and memory complexity and usage
 * Display more information in GUI
-* Rainbow colors of visualisation
-* Add config to the framework

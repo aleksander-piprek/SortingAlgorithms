@@ -50,15 +50,26 @@ std::vector<int> Algorithms::MergeSort::sort(std::vector<int> unsortedVector)
 
 std::vector<int> Algorithms::MergeSort::mergeSort(std::vector<int> unsortedVector)
 {
-    std::vector<int> leftSide;
-    std::vector<int> rightSide;
+    if(unsortedVector.size() <= 1)
+        return unsortedVector;
 
-    return mergeSort(leftSide);
+    auto halfPoint = unsortedVector.size() / 2;
+    std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
+    std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
+
+    mergeSort(leftSide);
+    mergeSort(rightSide);
+    
+    return merge(leftSide, rightSide);
 }
 
-std::vector<int> Algorithms::MergeSort::merge()
+std::vector<int> Algorithms::MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
 {
-    return std::vector<int>();
+    if(leftSide[0] < rightSide[0])
+        sortedVector.push_back(leftSide[0]);
+        sortedVector.push_back(rightSide[0]);
+
+    return sortedVector;
 }
 
 std::vector<int> Algorithms::MergeSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
