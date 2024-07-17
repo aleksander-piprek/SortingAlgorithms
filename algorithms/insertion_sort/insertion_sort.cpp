@@ -1,7 +1,7 @@
 #include "insertion_sort.hpp"
 
 Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector)
+    : unsortedVector_(unsortedVector), name_ ("InsertionSort")
 {
     switch(simulationMode)
     {
@@ -101,11 +101,6 @@ std::vector<int> Algorithms::InsertionSort::stepSort(std::vector<int> unsortedVe
     ++i;
 
     return unsortedVector;
-}
-
-std::vector<int> Algorithms::InsertionSort::getUnsortedVector()
-{
-    return unsortedVector_;
 }
 
 void Algorithms::InsertionSort::visualise(std::vector<int> unsortedVector)

@@ -1,11 +1,11 @@
 # Sorting Algorithms
 Repository is dedicated to create a simple framework to test sorting algorithms. To use the early version of the framework:
 
-1. Create **Random** object with range passed as a parameter to create a randomly distributed vector
+1. Create **Random** object.
 2. Create an algorithm object from any of the implemented sorting algorithms
 3. Pass the created vector in Step 1. as a parameter of given sorting algorithm to test it
-4. User has to change **simulationMode** depending on type of application:
-
+4. User has to change config having **simulationMode** and **vectorSize** depending on type of application:
+- **VectorSize** is the size of the initial vector
 -  **Test** is just going to check if algorithms work correctly and print only time.
 - **Print** is going to check correctness, print time and sorted vector.
 - **Animate** is going to show the sorting algorithm working in real time.
