@@ -14,6 +14,8 @@ int main()
         return 1;
     }
 
+    createRainbow();
+
     // Create random vector in range (1 - range)
     Random vector(vectorSize);
 
@@ -33,6 +35,6 @@ int main()
     Algorithms::CocktailSort CocktailSort(vector.unsortedVector);
 
     // Cocktail Sort
-    Algorithms::MergeSort MergeSort(vector.unsortedVector);    
+    Algorithms::MergeSort MergeSort(vector.unsortedVector);
     return 0;
 }

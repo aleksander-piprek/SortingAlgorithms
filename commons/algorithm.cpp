@@ -48,17 +48,15 @@ void Visualiser::draw()
     text.setFont(font);
     text.setString(algorithmName);
     text.setCharacterSize(18);
-    text.setFillColor(sf::Color::White);    
+    text.setFillColor(sf::Color::White);
 
     for (size_t k = 0; k < data.size(); ++k) 
     {
         sf::RectangleShape bar;
         bar.setSize(sf::Vector2f(barWidth, ((float)data[k]) / vectorSize * height));
         bar.setPosition(k * barWidth, height - bar.getSize().y);
-        bar.setFillColor(sf::Color::White);
+        bar.setFillColor(rainbow[data[k]]);
         window.draw(bar);
-
-   
         window.draw(text);
     }
 
