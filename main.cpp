@@ -7,6 +7,12 @@
 
 int main()
 {
+    if(!loadConfig())
+    {
+        std::cout << "Error in loading config\n";
+        return 1;
+    }
+    
     // Create random vector in range (1 - range)
     Random vector(vectorSize);
 
@@ -23,6 +29,6 @@ int main()
     Algorithms::SelectionSort SelectionSort(vector.unsortedVector);
     
     // Cocktail Sort
-    Algorithms::CocktailSort CocktailSort(vector.unsortedVector);    
+    Algorithms::CocktailSort CocktailSort(vector.unsortedVector);
     return 0;
 }

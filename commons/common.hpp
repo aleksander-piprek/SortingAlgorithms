@@ -19,4 +19,6 @@ extern int vectorSize;
 
 extern std::vector<int> correct;
 
+bool loadConfig();
+
 #endif //COMMON_HPP

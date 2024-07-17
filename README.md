@@ -4,6 +4,11 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 1. Create **Random** object with range passed as a parameter to create a randomly distributed vector
 2. Create an algorithm object from any of the implemented sorting algorithms
 3. Pass the created vector in Step 1. as a parameter of given sorting algorithm to test it
+4. User has to change **simulationMode** depending on type of application:
+
+-  **Test** is just going to check if algorithms work correctly and print only time.
+- **Print** is going to check correctness, print time and sorted vector.
+- **Animate** is going to show the sorting algorithm working in real time.
 
 ## Theoretical time complexities for algorithms
 | Algorithm   	| Best 	| Average 	| Worst 
@@ -21,6 +26,22 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | insertion_sort  | ~ 1 ms  | ~ 10 ms | ~ 39 ms   | ~ 150 ms  |
 | selection_sort  | ~ 6 ms  | ~ 36 ms | ~ 144 ms  | ~ 565 ms  |
 | cocktail_shaker | ~ 6 ms  | ~ 38 ms | ~ 145 ms  | ~ 581 ms  |
+
+## Dependencies installation
+~~~
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install build-essential cmake libsfml-dev
+~~~
+
+## Building
+~~~
+$ git clone https://github.com/aleksander-piprek/SortingAlgorithms.git
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
+~~~
 
 ## TODO:
 * New algorithms:
