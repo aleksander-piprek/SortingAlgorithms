@@ -1,6 +1,6 @@
-#include "bubble_sort.hpp"
+#include "cocktail_sort.hpp"
 
-Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
+Algorithms::CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector)
 {
     switch(simulationMode)
@@ -28,7 +28,7 @@ Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> Algorithms::BubbleSort::sort(std::vector<int> unsortedVector)
+std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
 {
     std::cout << "Bubble sort: ";   
     auto start_time = std::chrono::high_resolution_clock::now();
@@ -63,7 +63,7 @@ std::vector<int> Algorithms::BubbleSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
     for(int j = 0; j < unsortedVector.size() - i; j++)
     {
@@ -84,12 +84,12 @@ std::vector<int> Algorithms::BubbleSort::stepSort(std::vector<int> unsortedVecto
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::BubbleSort::getUnsortedVector()
+std::vector<int> Algorithms::CocktailSort::getUnsortedVector()
 {
     return unsortedVector_;
 }
 
-void Algorithms::BubbleSort::visualise(std::vector<int> unsortedVector)
+void Algorithms::CocktailSort::visualise(std::vector<int> unsortedVector)
 {
     Visualiser visualise(this);
     visualise.run(this);

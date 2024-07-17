@@ -32,7 +32,6 @@ void Visualiser::run(Algorithms::Algorithm* algorithm)
                 window.close();
             }                
                 
-        ++i;
         if(sorting)
             data = algorithm->stepSort(data, i, j, sorting);
 

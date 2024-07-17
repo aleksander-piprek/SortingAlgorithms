@@ -1,16 +1,17 @@
-#ifndef SELECTION_SORT_HPP
-#define SELECTION_SORT_HPP
+#ifndef COCKTAIL_SORT_HPP
+#define COCKTAIL_SORT_HPP
 
 #include "../../commons/algorithm.hpp"
 
 namespace Algorithms
 {
-    class SelectionSort : public Algorithm
+    class CocktailSort : public Algorithm
     {
+        friend class Visualiser;
         public:
-            SelectionSort(std::vector<int> unsortedVector);
-            
-            std::vector<int> sort(std::vector<int> unsortedVector);
+            CocktailSort(std::vector<int> unsortedVector);
+
+            std::vector<int> sort(std::vector<int> unsortedVector) override;
             std::vector<int> stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting) override;
             std::vector<int> getUnsortedVector() override;
 
@@ -18,7 +19,9 @@ namespace Algorithms
 
             std::vector<int> unsortedVector_;
             std::vector<int> sortedVector;
+
+            bool isSwapped = false;
     };
 }
 
-#endif //SELECTION_SORT_HPP
+#endif //COCKTAIL_SORT_HPP

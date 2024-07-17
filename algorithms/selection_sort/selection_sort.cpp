@@ -1,13 +1,14 @@
 #include "selection_sort.hpp"
 
 Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
+    : unsortedVector_(unsortedVector)
 {
     switch(simulationMode)
     {
         case test:
         {
             sortedVector = sort(unsortedVector);
-            std::cout << std::endl;            
+            std::cout << std::endl;
             break;
         }
 
@@ -15,12 +16,13 @@ Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
         {
             sortedVector = sort(unsortedVector);
             displayVector(sortedVector);
-            std::cout << std::endl;            
+            std::cout << std::endl;
             break;
         }
 
         case animate:
         {
+            visualise(unsortedVector);
             break;
         }
     }    
@@ -31,6 +33,21 @@ std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector
     std::cout << "Selection sort: ";
         
     auto start_time = std::chrono::high_resolution_clock::now();
+
+    std::cout << "\n";  
+    for(int i = 0; i < unsortedVector.size(); i++)
+    {
+        int min = unsortedVector[i];
+        int temp = min;
+
+        for(int j = i; j < unsortedVector.size(); j++)
+            if(unsortedVector[j] < min)
+                min = unsortedVector[j];
+
+        auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
+        auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
+        std::iter_swap(it1, it2);    
+    }
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
@@ -43,4 +60,33 @@ std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
     return unsortedVector;
+}
+
+std::vector<int> Algorithms::SelectionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+{
+    int min = unsortedVector[i];
+    int temp = min;
+
+    for(int j = i; j < unsortedVector.size(); j++)
+        if(unsortedVector[j] < min)
+            min = unsortedVector[j];
+
+    auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
+    auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
+    std::iter_swap(it1, it2);  
+
+    ++i;
+
+    return unsortedVector;
+}
+
+std::vector<int> Algorithms::SelectionSort::getUnsortedVector()
+{
+    return unsortedVector_;
+}
+
+void Algorithms::SelectionSort::visualise(std::vector<int> unsortedVector)
+{
+    Visualiser visualise(this);
+    visualise.run(this);
 }

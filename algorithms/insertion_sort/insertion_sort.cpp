@@ -72,13 +72,33 @@ std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector
 
 std::vector<int> Algorithms::InsertionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
-    for(int j = 0; j < unsortedVector.size() - i; j++)
+    for(int j = i - 1; j >= 0; j--)
     {
-        if(unsortedVector[j] > unsortedVector[j+1])
+        if(i == vectorSize)
         {
-            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+            sorting = false;
+            break;
         }
+    
+        if(unsortedVector[i] < unsortedVector[j])
+        {
+            if(j == 0)
+            {
+                unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                unsortedVector.erase(unsortedVector.begin() + i + 1);
+                break;
+            }
+
+            if(unsortedVector[i] > unsortedVector[j-1])
+            {
+                unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                unsortedVector.erase(unsortedVector.begin() + i + 1);
+                break;
+            }
+        }     
     }
+
+    ++i;
 
     return unsortedVector;
 }

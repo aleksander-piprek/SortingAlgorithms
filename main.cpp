@@ -3,6 +3,7 @@
 #include "algorithms/cpp_sort/cpp_sort.hpp"
 #include "algorithms/insertion_sort/insertion_sort.hpp"
 #include "algorithms/selection_sort/selection_sort.hpp"
+#include "algorithms/cocktail_sort/cocktail_sort.hpp"
 
 int main()
 {
@@ -18,7 +19,7 @@ int main()
     // Insertion Sort
     Algorithms::InsertionSort InsertionSort(vector.unsortedVector);
     
-    // // Selection Sort
-    // Algorithms::SelectionSort SelectionSort(vector.unsortedVector);
+    // Selection Sort
+    Algorithms::SelectionSort SelectionSort(vector.unsortedVector);
     return 0;
 }
