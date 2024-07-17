@@ -30,7 +30,7 @@ Algorithms::CocktailSort::CocktailSort(std::vector<int> unsortedVector)
 
 std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << "Bubble sort: ";   
+    std::cout << "Cocktail shaker sort: ";   
     auto start_time = std::chrono::high_resolution_clock::now();
 
     for(int i = 0; i < unsortedVector.size(); i++)
@@ -45,7 +45,16 @@ std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
                 isSwapped = true;
             }
         }
-
+        
+        for(int j = unsortedVector.size() - 1 - i; j > 0; j--)
+        {
+            if(unsortedVector[j] < unsortedVector[j-1])
+            {
+                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j - 1);     
+                isSwapped = true;
+            }
+        }
+        
         if(!isSwapped)
             break; 
     }
@@ -65,19 +74,13 @@ std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
 
 std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
-    for(int j = 0; j < unsortedVector.size() - i; j++)
-    {
-        if(i > vectorSize)
-        {
-            sorting = false;
-            break;
-        }
-
+    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         if(unsortedVector[j] > unsortedVector[j+1])
-        {
             iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
-        }
-    }
+    
+    for(int j = unsortedVector.size() - 1 - i; j > 0; j--)
+        if(unsortedVector[j] < unsortedVector[j-1])
+            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j - 1);     
 
     ++i;
 

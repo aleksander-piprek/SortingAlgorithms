@@ -1,7 +1,7 @@
 #include "common.hpp"
 
-int vectorSize = 1000;
+int vectorSize = 560;
 
-SimulationMode simulationMode = animate;
+SimulationMode simulationMode = test;
 
 std::vector<int> correct;

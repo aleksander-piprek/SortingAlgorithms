@@ -34,7 +34,6 @@ std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector
         
     auto start_time = std::chrono::high_resolution_clock::now();
 
-    std::cout << "\n";  
     for(int i = 0; i < unsortedVector.size(); i++)
     {
         int min = unsortedVector[i];

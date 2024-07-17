@@ -21,5 +21,8 @@ int main()
     
     // Selection Sort
     Algorithms::SelectionSort SelectionSort(vector.unsortedVector);
+    
+    // Cocktail Sort
+    Algorithms::CocktailSort CocktailSort(vector.unsortedVector);    
     return 0;
 }
