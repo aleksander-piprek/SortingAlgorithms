@@ -1,21 +1,20 @@
 #include "insertion_sort.hpp"
 
 Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("InsertionSort")
+    : unsortedVector_(unsortedVector), name_ ("Insertion Sort")
 {
     switch(simulationMode)
     {
         case test:
         {       
-            sortedVector = sort(unsortedVector);
+            sort(unsortedVector);
             std::cout << std::endl;            
             break;
         }
 
         case print: 
         {
-            sortedVector = sort(unsortedVector);
-            displayVector(sortedVector);
+            displayVector(sort(unsortedVector));
             std::cout << std::endl;            
             break;
         }

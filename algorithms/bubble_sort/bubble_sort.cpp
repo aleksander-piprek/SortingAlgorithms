@@ -1,21 +1,20 @@
 #include "bubble_sort.hpp"
 
 Algorithms::BubbleSort::BubbleSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("BubbleSort")
+    : unsortedVector_(unsortedVector), name_ ("Bubble Sort")
 {
     switch(simulationMode)
     {
         case test:
         {
-            sortedVector = sort(unsortedVector);
+            sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
         case print: 
         {
-            sortedVector = sort(unsortedVector);
-            displayVector(sortedVector);
+            displayVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }

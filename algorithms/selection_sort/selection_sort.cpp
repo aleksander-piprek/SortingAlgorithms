@@ -1,21 +1,20 @@
 #include "selection_sort.hpp"
 
 Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("SelectionSort")
+    : unsortedVector_(unsortedVector), name_ ("Selection Sort")
 {
     switch(simulationMode)
     {
         case test:
         {
-            sortedVector = sort(unsortedVector);
+            sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
         case print: 
         {
-            sortedVector = sort(unsortedVector);
-            displayVector(sortedVector);
+            displayVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }

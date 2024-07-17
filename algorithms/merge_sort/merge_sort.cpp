@@ -1,21 +1,20 @@
 #include "merge_sort.hpp"
 
 Algorithms::MergeSort::MergeSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("MergeSort")
+    : unsortedVector_(unsortedVector), name_ ("Merge Sort")
 {
     switch(simulationMode)
     {
         case test:
         {
-            sortedVector = sort(unsortedVector);
+            sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
         case print: 
         {
-            sortedVector = sort(unsortedVector);
-            displayVector(sortedVector);
+            displayVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }
@@ -34,19 +33,19 @@ std::vector<int> Algorithms::MergeSort::sort(std::vector<int> unsortedVector)
         
     auto start_time = std::chrono::high_resolution_clock::now();
 
-    sortedVector = mergeSort(unsortedVector);
+    mergeSort(unsortedVector);
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
     
-    if(sortedVector == correct)
+    if(unsortedVector == correct)
         std::cout << "[OK]\n";
     else
         std::cout << "[Error]\n";
 
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
-    return sortedVector;
+    return unsortedVector;
 }
 
 std::vector<int> Algorithms::MergeSort::mergeSort(std::vector<int> unsortedVector)
