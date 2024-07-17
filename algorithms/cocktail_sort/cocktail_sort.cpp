@@ -73,7 +73,17 @@ std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
 }
 
 std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+<<<<<<< HEAD
 {        
+=======
+{    
+    if(i == vectorSize)
+    {
+        sorting = false;
+        return unsortedVector;
+    }    
+    
+>>>>>>> a751c37b4e18e654349f6cf5304870875131cc03
     for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         if(unsortedVector[j] > unsortedVector[j+1])
             iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
