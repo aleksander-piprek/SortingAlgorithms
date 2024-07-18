@@ -5,12 +5,11 @@
 
 class Random
 {
+    int vectorSize_;    
     public:
-        Random(int range);
-
-        void createRandomVector(int range);
-
-        int range;
+        Random(int vectorSize);
+        std::vector<int> createRandomVector(int vectorSize);
+        
         std::vector<int> unsortedVector;  
 };
 

@@ -2,14 +2,12 @@
 #include <fstream>
 #include <sstream>
 
+SimulationMode simulationMode = ANIMATE;
 int vectorSize = 1000;
-
-unsigned int windowWidth;
-unsigned int windowHeight;
-
-SimulationMode simulationMode = animate;
-
 std::vector<int> correct;
+
+unsigned int windowWidth = 1280;
+unsigned int windowHeight = 720;
 
 bool loadConfig()
 {
@@ -32,12 +30,12 @@ bool loadConfig()
 
                 if (key == "SimulationMode")
                 {
-                    if (value == "test")
-                        simulationMode = test;
-                    else if (value == "print")
-                        simulationMode = print;
-                    else if (value == "animate")
-                        simulationMode = animate;
+                    if (value == "TEST")
+                        simulationMode = TEST;
+                    else if (value == "PRINT")
+                        simulationMode = PRINT;
+                    else if (value == "ANIMATE")
+                        simulationMode = ANIMATE;
                 }
                 else if (key == "VectorSize")
                     vectorSize = std::stoi(value);

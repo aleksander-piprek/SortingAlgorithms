@@ -5,21 +5,21 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
 {
     switch(simulationMode)
     {
-        case test:
+        case TEST:
         {
             sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
-        case print: 
+        case PRINT: 
         {
             displayVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }
 
-        case animate:
+        case ANIMATE:
         {
             visualise(unsortedVector);
             break;

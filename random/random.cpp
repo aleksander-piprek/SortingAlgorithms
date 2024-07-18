@@ -1,16 +1,19 @@
 #include "random.hpp"
+#include <unordered_set>
+#include <random>
+#include <vector>
 
-Random::Random(int range)
-    : range(range)
+Random::Random(int vectorSize)
+    : vectorSize_(vectorSize)
 {
     switch(simulationMode)
     {
-        case test:
+        case TEST:
         {
-            std::cout << "Randomly distributed numbers in range 1 - " << range << ": " << std::endl;
+            std::cout << "Randomly distributed numbers in range 1 - " << vectorSize_ << ": " << std::endl;
             auto start_time = std::chrono::high_resolution_clock::now();
 
-            createRandomVector(range);
+            unsortedVector = createRandomVector(vectorSize_);
             
             auto end_time = std::chrono::high_resolution_clock::now();
             auto time = end_time - start_time;
@@ -19,13 +22,13 @@ Random::Random(int range)
 
             break;
         }
-        case print:
+        case PRINT:
         {
-            std::cout << "Randomly distributed numbers in range 1 - " << range << ": "<< std::endl;
+            std::cout << "Randomly distributed numbers in range 1 - " << vectorSize_ << ": "<< std::endl;
 
             auto start_time = std::chrono::high_resolution_clock::now();
 
-            createRandomVector(range);
+            unsortedVector = createRandomVector(vectorSize_);
             
             auto end_time = std::chrono::high_resolution_clock::now();
             auto time = end_time - start_time;
@@ -39,24 +42,28 @@ Random::Random(int range)
 
             break;
         }
-        case animate:
+        case ANIMATE:
         {
-            createRandomVector(range);
+            unsortedVector = createRandomVector(vectorSize_);
         }
     }
 }
 
-void Random::createRandomVector(int range)
+std::vector<int> Random::createRandomVector(int vectorSize)
 {
-    srand((unsigned) time(NULL));
-        
-    while(true)
-    {
-        if(unsortedVector.size() == range)
-            break;
+    std::unordered_set<int> uniqueNumbers;
+    unsortedVector.reserve(vectorSize); 
 
-        int random = 1 + (rand() % range);
-        if(std::find(unsortedVector.begin(), unsortedVector.end(), random) == unsortedVector.end())
+    std::random_device rd;  
+    std::mt19937 gen(rd()); 
+    std::uniform_int_distribution<> distrib(1, vectorSize);
+
+    while (uniqueNumbers.size() < vectorSize)
+    {
+        int random = distrib(gen);
+        if (uniqueNumbers.insert(random).second)
             unsortedVector.push_back(random);
     }
+
+    return unsortedVector;
 }

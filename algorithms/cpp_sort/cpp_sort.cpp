@@ -5,7 +5,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
 {
     switch(simulationMode)
     {
-        case test:
+        case TEST:
         {
             std::cout << "cpp sort(): \n";            
             correct = sort(unsortedVector);
@@ -13,7 +13,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
             break;
         }
 
-        case print: 
+        case PRINT: 
         {
             std::cout << "cpp sort(): \n";
             correct = sort(unsortedVector);
@@ -22,7 +22,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
             break;
         }
 
-        case animate:
+        case ANIMATE:
         {
             correct = sort(unsortedVector);
             break;

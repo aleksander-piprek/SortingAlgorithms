@@ -10,24 +10,22 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 
+const char configPath[] = "../config/debug.cfg";
+
 enum SimulationMode
 {
-    test,
-    print,
-    animate
+    TEST,
+    PRINT,
+    ANIMATE
 };
 
 extern SimulationMode simulationMode;
-
 extern int vectorSize;
+extern std::vector<int> correct;
 extern std::map<int, sf::Color> rainbow;
 
 extern unsigned int windowWidth;
 extern unsigned int windowHeight;
-
-extern std::vector<int> correct;
-
-const char configPath[] = "../config/debug.cfg";
 
 bool loadConfig();
 void createRainbow();
