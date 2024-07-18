@@ -4,6 +4,9 @@
 
 int vectorSize = 1000;
 
+unsigned int windowWidth;
+unsigned int windowHeight;
+
 SimulationMode simulationMode = animate;
 
 std::vector<int> correct;
@@ -12,9 +15,7 @@ bool loadConfig()
 {
     std::ifstream in(configPath);
     if (!in.is_open())
-    {
         return false;
-    }
 
     std::string line;
     while (std::getline(in, line))
@@ -39,9 +40,11 @@ bool loadConfig()
                         simulationMode = animate;
                 }
                 else if (key == "VectorSize")
-                {
                     vectorSize = std::stoi(value);
-                }
+                else if (key == "WindowWidth")
+                    windowWidth = std::stoi(value);
+                else if (key == "WindowHeight")
+                    windowHeight = std::stoi(value);
             }
         }
     }
@@ -59,29 +62,17 @@ sf::Color hsvToRgb(float hue, float saturation, float value)
 
     float r, g, b;
     if (hue >= 0 && hue < 60)
-    {
         r = c, g = x, b = 0;
-    }
     else if (hue >= 60 && hue < 120)
-    {
         r = x, g = c, b = 0;
-    }
     else if (hue >= 120 && hue < 180)
-    {
         r = 0, g = c, b = x;
-    }
     else if (hue >= 180 && hue < 240)
-    {
         r = 0, g = x, b = c;
-    }
     else if (hue >= 240 && hue < 300)
-    {
         r = x, g = 0, b = c;
-    }
     else
-    {
         r = c, g = 0, b = x;
-    }
 
     return sf::Color((r + m) * 255, (g + m) * 255, (b + m) * 255);
 }
@@ -94,5 +85,4 @@ void createRainbow()
         float hue = i * hueIncrement;
         rainbow[i] = hsvToRgb(hue, 1.0f, 1.0f); 
     }
-    std::cout<<"check";
 }

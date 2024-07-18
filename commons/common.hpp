@@ -18,12 +18,16 @@ enum SimulationMode
 };
 
 extern SimulationMode simulationMode;
+
 extern int vectorSize;
 extern std::map<int, sf::Color> rainbow;
 
-const char configPath[] = "../config/debug.cfg";
+extern unsigned int windowWidth;
+extern unsigned int windowHeight;
 
 extern std::vector<int> correct;
+
+const char configPath[] = "../config/debug.cfg";
 
 bool loadConfig();
 void createRainbow();

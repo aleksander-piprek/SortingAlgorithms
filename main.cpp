@@ -20,21 +20,21 @@ int main()
     Random vector(vectorSize);
 
     // Sort() from STL for comparison
-    Algorithms::CppSort cppSort(vector.unsortedVector);
+    CppSort cppSort(vector.unsortedVector);
 
     // Bubble Sort
-    Algorithms::BubbleSort BubbleSort(vector.unsortedVector);
+    BubbleSort BubbleSort(vector.unsortedVector);
 
     // Insertion Sort
-    Algorithms::InsertionSort InsertionSort(vector.unsortedVector);
+    InsertionSort InsertionSort(vector.unsortedVector);
     
     // Selection Sort
-    Algorithms::SelectionSort SelectionSort(vector.unsortedVector);
+    SelectionSort SelectionSort(vector.unsortedVector);
     
     // Cocktail Sort
-    Algorithms::CocktailSort CocktailSort(vector.unsortedVector);
+    CocktailSort CocktailSort(vector.unsortedVector);
 
     // Cocktail Sort
-    Algorithms::MergeSort MergeSort(vector.unsortedVector);
+    MergeSort MergeSort(vector.unsortedVector);
     return 0;
 }

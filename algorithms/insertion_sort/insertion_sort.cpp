@@ -1,6 +1,6 @@
 #include "insertion_sort.hpp"
 
-Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
+InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Insertion Sort")
 {
     switch(simulationMode)
@@ -27,7 +27,7 @@ Algorithms::InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector)
+std::vector<int> InsertionSort::sort(std::vector<int> unsortedVector)
 {
     std::cout << "Insertion sort: ";     
 
@@ -69,7 +69,7 @@ std::vector<int> Algorithms::InsertionSort::sort(std::vector<int> unsortedVector
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::InsertionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> InsertionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
     for(int j = i - 1; j >= 0; j--)
     {
@@ -102,7 +102,7 @@ std::vector<int> Algorithms::InsertionSort::stepSort(std::vector<int> unsortedVe
     return unsortedVector;
 }
 
-void Algorithms::InsertionSort::visualise(std::vector<int> unsortedVector)
+void InsertionSort::visualise(std::vector<int> unsortedVector)
 {
     Visualiser visualise(this);
     visualise.run(this);

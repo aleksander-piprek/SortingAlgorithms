@@ -1,6 +1,6 @@
 #include "cpp_sort.hpp"
 
-Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
+CppSort::CppSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("cpp Sort")
 {
     switch(simulationMode)
@@ -30,7 +30,7 @@ Algorithms::CppSort::CppSort(std::vector<int> unsortedVector)
     }
 }
 
-std::vector<int> Algorithms::CppSort::sort(std::vector<int> unsortedVector)
+std::vector<int> CppSort::sort(std::vector<int> unsortedVector)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 
@@ -44,7 +44,7 @@ std::vector<int> Algorithms::CppSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::CppSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> CppSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
     return std::vector<int>();
 }

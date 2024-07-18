@@ -1,6 +1,6 @@
 #include "merge_sort.hpp"
 
-Algorithms::MergeSort::MergeSort(std::vector<int> unsortedVector)
+MergeSort::MergeSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Merge Sort")
 {
     switch(simulationMode)
@@ -27,7 +27,7 @@ Algorithms::MergeSort::MergeSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> Algorithms::MergeSort::sort(std::vector<int> unsortedVector)
+std::vector<int> MergeSort::sort(std::vector<int> unsortedVector)
 {
     std::cout << "Merge sort: ";
         
@@ -48,7 +48,7 @@ std::vector<int> Algorithms::MergeSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::MergeSort::mergeSort(std::vector<int> unsortedVector)
+std::vector<int> MergeSort::mergeSort(std::vector<int> unsortedVector)
 {
     if(unsortedVector.size() <= 1)
         return unsortedVector;
@@ -63,7 +63,7 @@ std::vector<int> Algorithms::MergeSort::mergeSort(std::vector<int> unsortedVecto
     return merge(leftSide, rightSide);
 }
 
-std::vector<int> Algorithms::MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
+std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
 {
     if(leftSide[0] < rightSide[0])
         sortedVector.push_back(leftSide[0]);
@@ -72,7 +72,7 @@ std::vector<int> Algorithms::MergeSort::merge(std::vector<int> leftSide, std::ve
     return sortedVector;
 }
 
-std::vector<int> Algorithms::MergeSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
 
     ++i;
@@ -80,7 +80,7 @@ std::vector<int> Algorithms::MergeSort::stepSort(std::vector<int> unsortedVector
     return unsortedVector;
 }
 
-void Algorithms::MergeSort::visualise(std::vector<int> unsortedVector)
+void MergeSort::visualise(std::vector<int> unsortedVector)
 {
     Visualiser visualise(this);
     visualise.run(this);

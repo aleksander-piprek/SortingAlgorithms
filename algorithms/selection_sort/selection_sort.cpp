@@ -1,6 +1,6 @@
 #include "selection_sort.hpp"
 
-Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
+SelectionSort::SelectionSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Selection Sort")
 {
     switch(simulationMode)
@@ -27,7 +27,7 @@ Algorithms::SelectionSort::SelectionSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector)
+std::vector<int> SelectionSort::sort(std::vector<int> unsortedVector)
 {
     std::cout << "Selection sort: ";
         
@@ -60,7 +60,7 @@ std::vector<int> Algorithms::SelectionSort::sort(std::vector<int> unsortedVector
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::SelectionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> SelectionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {
     if(i == vectorSize)
     {
@@ -84,7 +84,7 @@ std::vector<int> Algorithms::SelectionSort::stepSort(std::vector<int> unsortedVe
     return unsortedVector;
 }
 
-void Algorithms::SelectionSort::visualise(std::vector<int> unsortedVector)
+void SelectionSort::visualise(std::vector<int> unsortedVector)
 {
     Visualiser visualise(this);
     visualise.run(this);

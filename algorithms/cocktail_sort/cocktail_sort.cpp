@@ -1,6 +1,6 @@
 #include "cocktail_sort.hpp"
 
-Algorithms::CocktailSort::CocktailSort(std::vector<int> unsortedVector)
+CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Cocktail Shaker Sort")
 {
     switch(simulationMode)
@@ -27,7 +27,7 @@ Algorithms::CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
+std::vector<int> CocktailSort::sort(std::vector<int> unsortedVector)
 {
     std::cout << "Cocktail shaker sort: ";   
     auto start_time = std::chrono::high_resolution_clock::now();
@@ -71,7 +71,7 @@ std::vector<int> Algorithms::CocktailSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> CocktailSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
 {        
     for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         if(unsortedVector[j] > unsortedVector[j+1])
@@ -86,7 +86,7 @@ std::vector<int> Algorithms::CocktailSort::stepSort(std::vector<int> unsortedVec
     return unsortedVector;
 }
 
-void Algorithms::CocktailSort::visualise(std::vector<int> unsortedVector)
+void CocktailSort::visualise(std::vector<int> unsortedVector)
 {
     Visualiser visualise(this);
     visualise.run(this);
