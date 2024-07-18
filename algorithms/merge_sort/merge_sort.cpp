@@ -72,7 +72,7 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
     return sortedVector;
 }
 
-std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
 {
 
     ++i;

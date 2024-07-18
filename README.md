@@ -9,6 +9,8 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 -  **TEST** is just going to check if algorithms work correctly and print only time.
 - **PRINT** is going to check correctness, print time and sorted vector.
 - **ANIMATE** is going to show the sorting algorithm working in real time.
+- **WindowWidth** is the width of the window in pixels
+- **WindowHeight** is the height of the window in pixels
 
 ## Theoretical time complexities for algorithms
 | Algorithm   	| Best 	| Average 	| Worst 

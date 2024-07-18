@@ -6,6 +6,7 @@
 class Random
 {
     int vectorSize_;    
+    
     public:
         Random(int vectorSize);
         std::vector<int> createRandomVector(int vectorSize);

@@ -2,14 +2,13 @@
 #define ALGORITHM_HPP
 
 #include "../random/random.hpp"
-#include <SFML/Graphics.hpp>
 
 class Algorithm
 {
     public:
         virtual ~Algorithm() = 0;
         virtual std::vector<int> sort(std::vector<int> unsortedVector) = 0;
-        virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting) = 0;
+        virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) = 0;
 
         virtual std::vector<int> getUnsortedVector() = 0;
         virtual std::string getName() = 0;
@@ -27,6 +26,7 @@ class Visualiser
         void draw();
 
         sf::RenderWindow window;
+        sf::Font font;
         sf::Text text;
 
         std::vector<int> data;
@@ -35,7 +35,6 @@ class Visualiser
         float barWidth;
         bool sorting = true;
         int i = 0;
-        int j = 0;
 };
 
 #endif //ALGORITHM_HPP

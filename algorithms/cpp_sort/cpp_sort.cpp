@@ -44,7 +44,7 @@ std::vector<int> CppSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> CppSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> CppSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
 {
     return std::vector<int>();
 }

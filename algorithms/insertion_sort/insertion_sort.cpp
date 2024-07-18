@@ -69,7 +69,7 @@ std::vector<int> InsertionSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> InsertionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> InsertionSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
 {
     for(int j = i - 1; j >= 0; j--)
     {

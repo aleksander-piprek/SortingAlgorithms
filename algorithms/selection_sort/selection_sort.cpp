@@ -60,7 +60,7 @@ std::vector<int> SelectionSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> SelectionSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> SelectionSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
 {
     if(i == vectorSize)
     {

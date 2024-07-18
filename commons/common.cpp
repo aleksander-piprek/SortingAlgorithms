@@ -1,6 +1,8 @@
 #include "common.hpp"
 #include <fstream>
 #include <sstream>
+#include <cmath>
+#include <string>
 
 SimulationMode simulationMode = ANIMATE;
 int vectorSize = 1000;
@@ -78,7 +80,7 @@ sf::Color hsvToRgb(float hue, float saturation, float value)
 void createRainbow()
 {
     float hueIncrement = 360.0f / vectorSize;
-    for (int i = 0; i < vectorSize; ++i)
+    for (int i = 0; i <= vectorSize; ++i)
     {
         float hue = i * hueIncrement;
         rainbow[i] = hsvToRgb(hue, 1.0f, 1.0f); 

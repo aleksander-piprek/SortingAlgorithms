@@ -1,7 +1,6 @@
 #include "random.hpp"
 #include <unordered_set>
 #include <random>
-#include <vector>
 
 Random::Random(int vectorSize)
     : vectorSize_(vectorSize)

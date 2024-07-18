@@ -5,10 +5,8 @@
 #include <vector>
 #include <chrono>
 #include <algorithm>
-#include <string>
 #include <map>
 #include <SFML/Graphics.hpp>
-#include <cmath>
 
 const char configPath[] = "../config/debug.cfg";
 

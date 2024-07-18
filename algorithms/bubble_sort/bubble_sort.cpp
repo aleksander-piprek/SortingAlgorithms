@@ -62,21 +62,27 @@ std::vector<int> BubbleSort::sort(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, int& j, bool& sorting)
+std::vector<int> BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, bool& sorting)
 {
-    for(int j = 0; j < unsortedVector.size() - i; j++)
+    if (i >= unsortedVector.size() - 1)
     {
-        if(i > vectorSize)
-        {
-            sorting = false;
-            break;
-        }
+        sorting = false;
+        return unsortedVector;
+    }
 
+    isSwapped = false;
+
+    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
+    {
         if(unsortedVector[j] > unsortedVector[j+1])
         {
             iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+            isSwapped = true;
         }
     }
+
+    if(!isSwapped)
+        sorting = false;
 
     ++i;
 
