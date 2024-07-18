@@ -53,7 +53,7 @@ $ cmake --build .
   - [x] Insertion Sort
   - [x] Selection Sort
   - [x] Cocktail Shaker Sort
-  - [ ] Merge Sort
+  - [x] Merge Sort
   - [ ] Quick Sort
   - [ ] Heap Sort
   - [ ] Radix Sort
@@ -61,3 +61,4 @@ $ cmake --build .
   
 * Time and memory complexity and usage
 * Display more information in GUI
+* Queue to upload data and visualise it on different thread
