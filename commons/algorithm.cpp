@@ -28,7 +28,7 @@ void Visualiser::run(Algorithm* algorithm)
     while (window.isOpen()) 
     {
         sf::Event event;  
-        while (window.pollEvent(event)) 
+        while (window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 window.close();      
                 
@@ -47,7 +47,7 @@ void Visualiser::draw()
     {
         sf::RectangleShape bar;
         bar.setSize(sf::Vector2f(barWidth, ((float)data[k]) / vectorSize * windowHeight));
-        bar.setPosition(k * barWidth, windowHeight - bar.getSize().y);
+        bar.setPosition(k * barWidth - 1, windowHeight - bar.getSize().y);
         bar.setFillColor(rainbow[data[k]]);
         window.draw(bar);
     }

@@ -3,7 +3,7 @@
 CppSort::CppSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("cpp Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {

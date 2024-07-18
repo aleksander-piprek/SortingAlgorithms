@@ -10,14 +10,14 @@
 
 const char configPath[] = "../config/debug.cfg";
 
-enum SimulationMode
+enum ApplicationMode
 {
     TEST,
     PRINT,
     ANIMATE
 };
 
-extern SimulationMode simulationMode;
+extern ApplicationMode applicationMode;
 extern int vectorSize;
 extern std::vector<int> correct;
 extern std::map<int, sf::Color> rainbow;

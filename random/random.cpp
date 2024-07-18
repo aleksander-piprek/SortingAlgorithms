@@ -5,7 +5,7 @@
 Random::Random(int vectorSize)
     : vectorSize_(vectorSize)
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {

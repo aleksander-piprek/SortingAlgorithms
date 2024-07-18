@@ -3,7 +3,7 @@
 InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Insertion Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {       

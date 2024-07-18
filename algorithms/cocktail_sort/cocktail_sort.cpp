@@ -3,7 +3,7 @@
 CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Cocktail Shaker Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {

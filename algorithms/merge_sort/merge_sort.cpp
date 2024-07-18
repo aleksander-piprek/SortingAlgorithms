@@ -3,7 +3,7 @@
 MergeSort::MergeSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Merge Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {
@@ -33,7 +33,7 @@ std::vector<int> MergeSort::sort(std::vector<int> unsortedVector)
         
     auto start_time = std::chrono::high_resolution_clock::now();
 
-    mergeSort(unsortedVector);
+    unsortedVector = mergeSort(unsortedVector);
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
@@ -57,19 +57,45 @@ std::vector<int> MergeSort::mergeSort(std::vector<int> unsortedVector)
     std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
     std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
 
-    mergeSort(leftSide);
-    mergeSort(rightSide);
+    leftSide = mergeSort(leftSide);
+    rightSide = mergeSort(rightSide);
     
     return merge(leftSide, rightSide);
 }
 
 std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
 {
-    if(leftSide[0] < rightSide[0])
-        sortedVector.push_back(leftSide[0]);
-        sortedVector.push_back(rightSide[0]);
+    int left = 0;
+    int right = 0;
+    while(1)
+    {
+        if(leftSide.size() == 0)
+            return rightSide;
+        else if(rightSide.size() == 0)
+            return leftSide;
 
-    return sortedVector;
+        int leftSideElement = leftSide[left];
+        int rightSideElement = rightSide[right];
+        
+        if(leftSideElement > rightSideElement)
+        {
+            right++;
+            if(leftSideElement < rightSide[right] || right == rightSide.size())
+            {
+                rightSide.insert(rightSide.begin() + right, leftSide[left]);
+                leftSide.erase(leftSide.begin() + left);
+            }
+        }
+        else if(rightSideElement > leftSideElement)
+        {
+            left++;
+            if(rightSideElement < leftSide[left] || left == leftSide.size())
+            {
+                leftSide.insert(leftSide.begin() + left, rightSide[right]);
+                rightSide.erase(rightSide.begin() + right);
+            }       
+        }
+    }
 }
 
 std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)

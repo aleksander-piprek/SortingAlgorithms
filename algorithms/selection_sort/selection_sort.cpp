@@ -3,7 +3,7 @@
 SelectionSort::SelectionSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Selection Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {

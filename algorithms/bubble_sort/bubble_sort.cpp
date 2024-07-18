@@ -3,7 +3,7 @@
 BubbleSort::BubbleSort(std::vector<int> unsortedVector)
     : unsortedVector_(unsortedVector), name_ ("Bubble Sort")
 {
-    switch(simulationMode)
+    switch(applicationMode)
     {
         case TEST:
         {

@@ -4,7 +4,7 @@
 #include <cmath>
 #include <string>
 
-SimulationMode simulationMode = ANIMATE;
+ApplicationMode applicationMode = ANIMATE;
 int vectorSize = 1000;
 std::vector<int> correct;
 
@@ -30,14 +30,14 @@ bool loadConfig()
                 key.erase(key.find_last_not_of(" \n\r\t") + 1);
                 value.erase(0, value.find_first_not_of(" \n\r\t"));
 
-                if (key == "SimulationMode")
+                if (key == "ApplicationMode")
                 {
                     if (value == "TEST")
-                        simulationMode = TEST;
+                        applicationMode = TEST;
                     else if (value == "PRINT")
-                        simulationMode = PRINT;
+                        applicationMode = PRINT;
                     else if (value == "ANIMATE")
-                        simulationMode = ANIMATE;
+                        applicationMode = ANIMATE;
                 }
                 else if (key == "VectorSize")
                     vectorSize = std::stoi(value);
