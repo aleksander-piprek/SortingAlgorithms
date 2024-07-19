@@ -5,9 +5,6 @@
 
 class BubbleSort : public Algorithm
 {
-    std::vector<int> unsortedVector_;        
-    std::string name_;
-
     bool isSwapped = false;
     
     public:
@@ -15,9 +12,6 @@ class BubbleSort : public Algorithm
 
         std::vector<int>    sort(std::vector<int> unsortedVector) override;
         std::vector<int>    stepSort(std::vector<int> unsortedVector, int& i, bool& sorting) override;
-
-        std::vector<int>    getUnsortedVector() override {return unsortedVector_;}
-        std::string         getName()           override {return name_;}
 };
 
 #endif //BUBBLE_SORT_HPP

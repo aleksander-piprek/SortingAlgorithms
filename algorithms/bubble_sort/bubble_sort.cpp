@@ -1,7 +1,7 @@
 #include "bubble_sort.hpp"
 
 BubbleSort::BubbleSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Bubble Sort")
+    : Algorithm(unsortedVector, "Bubble Sort")
 {
     switch(applicationMode)
     {
@@ -30,7 +30,7 @@ BubbleSort::BubbleSort(std::vector<int> unsortedVector)
 
 std::vector<int> BubbleSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": ";
+    std::cout << this->getName() << ": ";
     auto start_time = std::chrono::high_resolution_clock::now();
 
     for(int i = 0; i < unsortedVector.size(); i++)

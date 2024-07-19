@@ -5,17 +5,11 @@
 
 class InsertionSort : public Algorithm
 {
-    std::vector<int> unsortedVector_;        
-    std::string name_;
-
     public:
         InsertionSort(std::vector<int> unsortedVector);
         
-        std::vector<int>    sort(std::vector<int> unsortedVector) override;
-        std::vector<int>    stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
-
-        std::vector<int>    getUnsortedVector() override {return unsortedVector_;}
-        std::string         getName()           override {return name_;}
+        std::vector<int> sort(std::vector<int> unsortedVector) override;
+        std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
 };
 
 

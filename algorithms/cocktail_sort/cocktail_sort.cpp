@@ -1,7 +1,7 @@
 #include "cocktail_sort.hpp"
 
 CocktailSort::CocktailSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Cocktail Shaker Sort")
+    : Algorithm(unsortedVector, "Cocktail Shaker Sort")
 {
     switch(applicationMode)
     {
@@ -30,7 +30,7 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
 
 std::vector<int> CocktailSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": "; 
+    std::cout << this->getName() << ": "; 
     auto start_time = std::chrono::high_resolution_clock::now();
 
     for(int i = 0; i < unsortedVector.size(); i++)

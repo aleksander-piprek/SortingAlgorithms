@@ -39,6 +39,6 @@ int main()
     MergeSort MergeSort(vector.unsortedVector);
 
     // Quick Sort
-    QuickSort QuickSort(vector.unsortedVector);    
+    QuickSort QuickSort(vector.unsortedVector);
     return 0;
 }

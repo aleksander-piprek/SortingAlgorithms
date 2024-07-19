@@ -1,7 +1,7 @@
 #include "insertion_sort.hpp"
 
 InsertionSort::InsertionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Insertion Sort")
+    : Algorithm(unsortedVector, "Insertion Sort")
 {
     switch(applicationMode)
     {
@@ -30,8 +30,7 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
 std::vector<int> InsertionSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": ";
-
+    std::cout << this->getName() << ": "; 
     auto start_time = std::chrono::high_resolution_clock::now();
 
     for(int i = 1; i <= unsortedVector.size(); i++)

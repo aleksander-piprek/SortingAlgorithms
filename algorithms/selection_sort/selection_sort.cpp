@@ -1,7 +1,7 @@
 #include "selection_sort.hpp"
 
 SelectionSort::SelectionSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Selection Sort")
+    : Algorithm(unsortedVector, "Selection Sort")
 {
     switch(applicationMode)
     {
@@ -30,7 +30,7 @@ SelectionSort::SelectionSort(std::vector<int> unsortedVector)
 
 std::vector<int> SelectionSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": ";
+    std::cout << this->getName() << ": "; 
         
     auto start_time = std::chrono::high_resolution_clock::now();
 

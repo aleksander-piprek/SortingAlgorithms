@@ -1,13 +1,13 @@
 #include "cpp_sort.hpp"
 
 CppSort::CppSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("cpp Sort")
+    : Algorithm(unsortedVector, "cpp Sort")
 {
     switch(applicationMode)
     {
         case TEST:
         {
-            std::cout << name_ << ": \n";            
+            std::cout << this->getName() << ": \n";            
             correct = sort(unsortedVector);
             std::cout << std::endl;            
             break;
@@ -15,7 +15,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
 
         case PRINT: 
         {
-            std::cout << name_ << ": \n";     
+            std::cout << this->getName() << ": \n";     
             correct = sort(unsortedVector);
             displayVector(correct);
             std::cout << std::endl;            
@@ -42,9 +42,4 @@ std::vector<int> CppSort::sort(std::vector<int> unsortedVector)
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";   
 
     return unsortedVector;
-}
-
-std::vector<int> CppSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
-{
-    return std::vector<int>();
 }

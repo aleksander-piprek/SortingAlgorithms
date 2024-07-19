@@ -1,7 +1,7 @@
 #include "merge_sort.hpp"
 
 MergeSort::MergeSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Merge Sort")
+    : Algorithm(unsortedVector, "Merge Sort")
 {
     switch(applicationMode)
     {
@@ -30,7 +30,7 @@ MergeSort::MergeSort(std::vector<int> unsortedVector)
 
 std::vector<int> MergeSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": ";
+    std::cout << this->getName() << ": "; 
         
     auto start_time = std::chrono::high_resolution_clock::now();
 

@@ -8,3 +8,13 @@ void Algorithm::displayVector(std::vector<int> sortedVector)
         std::cout << nums << " ";
     std::cout << "\n";
 }
+
+std::vector<int> Algorithm::getUnsortedVector()
+{
+    return this->unsortedVector;
+}
+
+std::string Algorithm::getName()
+{
+    return this->name;
+}

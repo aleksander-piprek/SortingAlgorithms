@@ -1,7 +1,7 @@
 #include "quick_sort.hpp"
 
 QuickSort::QuickSort(std::vector<int> unsortedVector)
-    : unsortedVector_(unsortedVector), name_ ("Quick Sort")
+    : Algorithm(unsortedVector, "Quick Sort")
 {
     switch(applicationMode)
     {
@@ -30,8 +30,8 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
 
 std::vector<int> QuickSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << name_ << ": ";
-        
+    std::cout << this->getName() << ": "; 
+    
     auto start_time = std::chrono::high_resolution_clock::now();
 
     unsortedVector = quickSort(unsortedVector);
