@@ -1,7 +1,7 @@
 #ifndef MERGE_SORT_HPP
 #define MERGE_SORT_HPP
 
-#include "../../commons/algorithm.hpp"
+#include "../../commons/algorithm/algorithm.hpp"
 
 class MergeSort : public Algorithm
 {
@@ -17,12 +17,8 @@ class MergeSort : public Algorithm
         std::vector<int>    getUnsortedVector() override {return unsortedVector_;}
         std::string         getName()           override {return name_;}
 
-        void visualise(std::vector<int> unsortedVector);
-
         std::vector<int> mergeSort(std::vector<int> unsortedVector);
-        std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide);
-
-        std::vector<int> sortedVector;      
+        std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide); 
 };
 
 

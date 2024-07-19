@@ -1,7 +1,7 @@
 #ifndef BUBBLE_SORT_HPP
 #define BUBBLE_SORT_HPP
 
-#include "../../commons/algorithm.hpp"
+#include "../../commons/algorithm/algorithm.hpp"
 
 class BubbleSort : public Algorithm
 {
@@ -18,8 +18,6 @@ class BubbleSort : public Algorithm
 
         std::vector<int>    getUnsortedVector() override {return unsortedVector_;}
         std::string         getName()           override {return name_;}
-
-        void visualise(std::vector<int> unsortedVector);
 };
 
 #endif //BUBBLE_SORT_HPP

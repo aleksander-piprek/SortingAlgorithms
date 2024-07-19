@@ -21,7 +21,8 @@ MergeSort::MergeSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            visualise(unsortedVector);
+            Visualiser visualise(this);
+            visualise.run(this);
             break;
         }
     }    
@@ -104,10 +105,4 @@ std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i,  b
     ++i;
 
     return unsortedVector;
-}
-
-void MergeSort::visualise(std::vector<int> unsortedVector)
-{
-    Visualiser visualise(this);
-    visualise.run(this);
 }

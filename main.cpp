@@ -1,4 +1,4 @@
-#include "commons/common.hpp"
+#include "commons/common/common.hpp"
 #include "algorithms/bubble_sort/bubble_sort.hpp"
 #include "algorithms/cpp_sort/cpp_sort.hpp"
 #include "algorithms/insertion_sort/insertion_sort.hpp"

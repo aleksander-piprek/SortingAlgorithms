@@ -21,7 +21,8 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            visualise(unsortedVector);            
+            Visualiser visualise(this);
+            visualise.run(this);  
             break;
         }
     }    
@@ -100,10 +101,4 @@ std::vector<int> InsertionSort::stepSort(std::vector<int> unsortedVector, int& i
     ++i;
 
     return unsortedVector;
-}
-
-void InsertionSort::visualise(std::vector<int> unsortedVector)
-{
-    Visualiser visualise(this);
-    visualise.run(this);
 }

@@ -21,7 +21,8 @@ BubbleSort::BubbleSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            visualise(unsortedVector);
+            Visualiser visualise(this);
+            visualise.run(this);
             break;
         }
     }    
@@ -87,10 +88,4 @@ std::vector<int> BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, b
     ++i;
 
     return unsortedVector;
-}
-
-void BubbleSort::visualise(std::vector<int> unsortedVector)
-{
-    Visualiser visualise(this);
-    visualise.run(this);
 }

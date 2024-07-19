@@ -1,7 +1,7 @@
 #ifndef QUICK_SORT_HPP
 #define QUICK_SORT_HPP
 
-#include "../../commons/algorithm.hpp"
+#include "../../commons/algorithm/algorithm.hpp"
 
 class QuickSort : public Algorithm
 {
@@ -17,9 +17,8 @@ class QuickSort : public Algorithm
         std::vector<int>    getUnsortedVector() override {return unsortedVector_;}
         std::string         getName()           override {return name_;}
 
-        void visualise(std::vector<int> unsortedVector);
-
         std::vector<int> quickSort(std::vector<int> unsortedVector);
+        std::vector<int> partition(std::vector<int> unsortedVector);
 
         std::vector<int> sortedVector;      
 };

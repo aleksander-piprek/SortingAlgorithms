@@ -1,13 +1,7 @@
-#include "algorithm.hpp"
+#include "visualise.hpp"
+#include "../algorithm/algorithm.hpp"
 
-Algorithm::~Algorithm() = default;
-
-void Algorithm::displayVector(std::vector<int> sortedVector)
-{
-    for(auto& nums : sortedVector)
-        std::cout << nums << " ";
-    std::cout << "\n";
-}
+class Algorithm;
 
 Visualiser::Visualiser(Algorithm* algorithm)
     :   window(sf::VideoMode(windowWidth, windowHeight), "Sorting Visualizer"), data(algorithm->getUnsortedVector()), algorithmName(algorithm->getName())

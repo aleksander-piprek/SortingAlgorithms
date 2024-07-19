@@ -8,7 +8,7 @@
 #include <map>
 #include <SFML/Graphics.hpp>
 
-const char configPath[] = "../config/debug.cfg";
+const char configPath[] = "../config/default.cfg";
 
 enum ApplicationMode
 {

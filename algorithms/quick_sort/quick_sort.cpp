@@ -21,7 +21,8 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            visualise(unsortedVector);
+            Visualiser visualise(this);
+            visualise.run(this);
             break;
         }
     }    
@@ -50,8 +51,26 @@ std::vector<int> QuickSort::sort(std::vector<int> unsortedVector)
 
 std::vector<int> QuickSort::quickSort(std::vector<int> unsortedVector)
 {
-    if(unsortedVector.size() <= 1)
+    // if(unsortedVector.size() <= 1)
         return unsortedVector;
+
+    // int pivot = unsortedVector[unsortedVector.size()-1];
+
+    // int left;
+    // int right;
+
+    // std::vector<int> leftOfPivot;
+    // std::vector<int> rightOfPivot;
+
+    // partition(leftOfPivot);
+    // partition(rightOfPivot);
+
+    // return quickSort();
+}
+
+std::vector<int> QuickSort::partition(std::vector<int> unsortedVector)
+{
+    return unsortedVector;
 }
 
 std::vector<int> QuickSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
@@ -60,10 +79,4 @@ std::vector<int> QuickSort::stepSort(std::vector<int> unsortedVector, int& i,  b
     ++i;
 
     return unsortedVector;
-}
-
-void QuickSort::visualise(std::vector<int> unsortedVector)
-{
-    Visualiser visualise(this);
-    visualise.run(this);
 }

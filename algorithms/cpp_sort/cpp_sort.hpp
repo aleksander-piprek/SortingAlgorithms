@@ -1,7 +1,7 @@
 #ifndef CPP_SORT_HPP
 #define CPP_SORT_HPP
 
-#include "../../commons/algorithm.hpp"
+#include "../../commons/algorithm/algorithm.hpp"
 
 class CppSort : public Algorithm
 {

@@ -21,7 +21,8 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            visualise(unsortedVector);
+            Visualiser visualise(this);
+            visualise.run(this);
             break;
         }
     }    
@@ -84,10 +85,4 @@ std::vector<int> CocktailSort::stepSort(std::vector<int> unsortedVector, int& i,
     ++i;
 
     return unsortedVector;
-}
-
-void CocktailSort::visualise(std::vector<int> unsortedVector)
-{
-    Visualiser visualise(this);
-    visualise.run(this);
 }

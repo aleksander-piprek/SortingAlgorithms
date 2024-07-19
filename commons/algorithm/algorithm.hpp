@@ -1,7 +1,8 @@
 #ifndef ALGORITHM_HPP
 #define ALGORITHM_HPP
 
-#include "../random/random.hpp"
+#include "../../random/random.hpp"
+#include "../visualise/visualise.hpp"
 
 class Algorithm
 {
@@ -9,32 +10,10 @@ class Algorithm
         virtual ~Algorithm() = 0;
         virtual std::vector<int> sort(std::vector<int> unsortedVector) = 0;
         virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) = 0;
-
         virtual std::vector<int> getUnsortedVector() = 0;
         virtual std::string getName() = 0;
 
         void displayVector(std::vector<int> sortedVector);       
-};
-
-class Visualiser
-{
-    public:
-        Visualiser(Algorithm* algorithm);
-        void run(Algorithm* algorithm);
-
-    private:
-        void draw();
-
-        sf::RenderWindow window;
-        sf::Font font;
-        sf::Text text;
-
-        std::vector<int> data;
-        std::string algorithmName;
-
-        float barWidth;
-        bool sorting = true;
-        int i = 0;
 };
 
 #endif //ALGORITHM_HPP
