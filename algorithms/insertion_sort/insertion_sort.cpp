@@ -29,7 +29,7 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
 std::vector<int> InsertionSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << "Insertion sort: ";     
+    std::cout << name_ << ": ";
 
     auto start_time = std::chrono::high_resolution_clock::now();
 

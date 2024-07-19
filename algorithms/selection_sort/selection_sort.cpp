@@ -29,7 +29,7 @@ SelectionSort::SelectionSort(std::vector<int> unsortedVector)
 
 std::vector<int> SelectionSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << "Selection sort: ";
+    std::cout << name_ << ": ";
         
     auto start_time = std::chrono::high_resolution_clock::now();
 

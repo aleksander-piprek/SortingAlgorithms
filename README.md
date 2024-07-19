@@ -20,6 +20,7 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | Selection Sort        | O(n^2) 	    | O(n^2)  	    | O(n^2)
 | Cocktail Shaker Sort  | O(n) 	      | O(n^2)  	    | O(n^2)
 | Merge Sort            | O(nlogn) 	  | O(nlogn)  	  | O(nlogn)
+| Quick Sort            | O(nlogn) 	  | O(nlogn)  	  | O(n^2)
 
 ## Average times for randomly distributed vector of different sizes:
 | Algorithm   	  | 1000    | 2500    | 5000      | 10000     |
@@ -30,6 +31,7 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | selection_sort  | ~ 6 ms  | ~ 36 ms | ~ 144 ms  | ~ 565 ms  |
 | cocktail_sort   | ~ 6 ms  | ~ 38 ms | ~ 145 ms  | ~ 581 ms  |
 | merge_sort      | ~ 2 ms  | ~ 7 ms  | ~ 15 ms   | ~ 32 ms   |
+| quick_sort      | ~ ms  | ~ ms  | ~ ms   | ~ ms   |
 
 ## Dependencies installation
 ~~~

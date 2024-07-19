@@ -5,6 +5,7 @@
 #include "algorithms/selection_sort/selection_sort.hpp"
 #include "algorithms/cocktail_sort/cocktail_sort.hpp"
 #include "algorithms/merge_sort/merge_sort.hpp"
+#include "algorithms/quick_sort/quick_sort.hpp"
 
 int main()
 {
@@ -34,7 +35,10 @@ int main()
     // Cocktail Sort
     CocktailSort CocktailSort(vector.unsortedVector);
 
-    // Cocktail Sort
+    // Merge Sort
     MergeSort MergeSort(vector.unsortedVector);
+
+    // Quick Sort
+    QuickSort QuickSort(vector.unsortedVector);    
     return 0;
 }

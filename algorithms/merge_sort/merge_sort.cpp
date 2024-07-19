@@ -29,7 +29,7 @@ MergeSort::MergeSort(std::vector<int> unsortedVector)
 
 std::vector<int> MergeSort::sort(std::vector<int> unsortedVector)
 {
-    std::cout << "Merge sort: ";
+    std::cout << name_ << ": ";
         
     auto start_time = std::chrono::high_resolution_clock::now();
 

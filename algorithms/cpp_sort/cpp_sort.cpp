@@ -7,7 +7,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {
-            std::cout << "cpp sort(): \n";            
+            std::cout << name_ << ": \n";            
             correct = sort(unsortedVector);
             std::cout << std::endl;            
             break;
@@ -15,7 +15,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
 
         case PRINT: 
         {
-            std::cout << "cpp sort(): \n";
+            std::cout << name_ << ": \n";     
             correct = sort(unsortedVector);
             displayVector(correct);
             std::cout << std::endl;            
