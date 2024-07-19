@@ -1,14 +1,14 @@
 #ifndef MERGE_SORT_HPP
 #define MERGE_SORT_HPP
 
-#include "../../commons/algorithm/algorithm.hpp"
+#include "../algorithm/algorithm.hpp"
 
 class MergeSort : public Algorithm
 {
     public:
         MergeSort(std::vector<int> unsortedVector);
         
-        std::vector<int> sort(std::vector<int> unsortedVector) override;
+        std::vector<int> sort(std::vector<int>& unsortedVector) override;
         std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
 
         std::vector<int> mergeSort(std::vector<int> unsortedVector);

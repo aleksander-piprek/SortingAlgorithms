@@ -10,13 +10,12 @@ endif (WIN32)
 find_package(SFML 2.5 COMPONENTS graphics audio system REQUIRED)
 
 add_executable(sorting_algorithms "main.cpp" 
-
+                                
+                                  "commons/random/random.cpp"
                                   "commons/common/common.cpp"
-                                  "commons/algorithm/algorithm.cpp"
                                   "commons/visualise/visualise.cpp"
-
-                                  "random/random.cpp"
                                   
+                                  "algorithms/algorithm/algorithm.cpp"
                                   "algorithms/cpp_sort/cpp_sort.cpp"
                                   "algorithms/bubble_sort/bubble_sort.cpp"
                                   "algorithms/insertion_sort/insertion_sort.cpp"

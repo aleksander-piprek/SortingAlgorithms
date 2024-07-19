@@ -14,7 +14,8 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
         case PRINT: 
         {
-            displayVector(sort(unsortedVector));
+            sort(unsortedVector);
+            displayVector();
             std::cout << std::endl;            
             break;
         }
@@ -28,7 +29,7 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> InsertionSort::sort(std::vector<int> unsortedVector)
+std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
 {
     std::cout << this->getName() << ": "; 
     auto start_time = std::chrono::high_resolution_clock::now();

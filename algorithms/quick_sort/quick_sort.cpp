@@ -14,7 +14,8 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
 
         case PRINT: 
         {
-            displayVector(sort(unsortedVector));
+            sort(unsortedVector);
+            displayVector();
             std::cout << std::endl;
             break;
         }
@@ -28,7 +29,7 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> QuickSort::sort(std::vector<int> unsortedVector)
+std::vector<int> QuickSort::sort(std::vector<int>& unsortedVector)
 {
     std::cout << this->getName() << ": "; 
     

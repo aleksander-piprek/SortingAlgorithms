@@ -2,9 +2,9 @@
 
 Algorithm::~Algorithm() = default;
 
-void Algorithm::displayVector(std::vector<int> sortedVector)
+void Algorithm::displayVector()
 {
-    for(auto& nums : sortedVector)
+    for(auto& nums : this->unsortedVector)
         std::cout << nums << " ";
     std::cout << "\n";
 }
