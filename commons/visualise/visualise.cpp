@@ -1,5 +1,5 @@
 #include "visualise.hpp"
-#include "../algorithm/algorithm.hpp"
+#include "../../algorithms/algorithm/algorithm.hpp"
 
 class Algorithm;
 

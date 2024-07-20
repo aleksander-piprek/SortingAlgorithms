@@ -7,14 +7,15 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {
-            sort(unsortedVector);
+            setVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }
 
         case PRINT: 
         {
-            displayVector(sort(unsortedVector));
+            setVector(sort(unsortedVector));
+            displayVector();
             std::cout << std::endl;
             break;
         }
@@ -28,7 +29,7 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
     }    
 }
 
-std::vector<int> CocktailSort::sort(std::vector<int> unsortedVector)
+std::vector<int> CocktailSort::sort(std::vector<int>& unsortedVector)
 {
     std::cout << this->getName() << ": "; 
     auto start_time = std::chrono::high_resolution_clock::now();

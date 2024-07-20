@@ -17,7 +17,8 @@ CppSort::CppSort(std::vector<int> unsortedVector)
         {
             std::cout << this->getName() << ": \n";     
             correct = sort(unsortedVector);
-            displayVector(correct);
+            setVector(correct);
+            displayVector();
             std::cout << std::endl;            
             break;
         }
@@ -30,7 +31,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
     }
 }
 
-std::vector<int> CppSort::sort(std::vector<int> unsortedVector)
+std::vector<int> CppSort::sort(std::vector<int>& unsortedVector)
 {
     auto start_time = std::chrono::high_resolution_clock::now();
 

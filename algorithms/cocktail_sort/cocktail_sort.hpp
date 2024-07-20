@@ -1,7 +1,7 @@
 #ifndef COCKTAIL_SORT_HPP
 #define COCKTAIL_SORT_HPP
 
-#include "../../commons/algorithm/algorithm.hpp"
+#include "../algorithm/algorithm.hpp"
 
 class CocktailSort : public Algorithm
 {
@@ -10,7 +10,7 @@ class CocktailSort : public Algorithm
     public:
         CocktailSort(std::vector<int> unsortedVector);
 
-        std::vector<int> sort(std::vector<int> unsortedVector) override;
+        std::vector<int> sort(std::vector<int>& unsortedVector) override;
         std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
 };
 
