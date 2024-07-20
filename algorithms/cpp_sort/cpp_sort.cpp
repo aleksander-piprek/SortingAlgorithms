@@ -17,6 +17,7 @@ CppSort::CppSort(std::vector<int> unsortedVector)
         {
             std::cout << this->getName() << ": \n";     
             correct = sort(unsortedVector);
+            setVector(correct);
             displayVector();
             std::cout << std::endl;            
             break;

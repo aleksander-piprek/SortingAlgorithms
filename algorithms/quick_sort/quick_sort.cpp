@@ -7,14 +7,14 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {
-            sort(unsortedVector);
+            setVector(sort(unsortedVector));
             std::cout << std::endl;
             break;
         }
 
         case PRINT: 
         {
-            sort(unsortedVector);
+            setVector(sort(unsortedVector));
             displayVector();
             std::cout << std::endl;
             break;

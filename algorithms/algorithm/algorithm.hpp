@@ -17,8 +17,9 @@ class Algorithm
         virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) = 0;
 
         std::vector<int> getUnsortedVector();
+        void setVector(std::vector<int> vector) { unsortedVector = vector; }
         std::string getName();
-        void displayVector();       
+        void displayVector();
 };
 
 #endif //ALGORITHM_HPP
