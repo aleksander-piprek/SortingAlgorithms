@@ -9,13 +9,7 @@
 
 int main()
 {
-    if(!loadConfig())
-    {
-        std::cout << "Error in loading config\n";
-        return 1;
-    }
-
-    createRainbow();
+    init();
 
     // Create random vector in range (1 - range)
     Random vector(vectorSize);

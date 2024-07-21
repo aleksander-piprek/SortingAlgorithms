@@ -4,7 +4,9 @@
 class Algorithm;
 
 Visualiser::Visualiser(Algorithm* algorithm)
-    :   window(sf::VideoMode(windowWidth, windowHeight), "Sorting Visualizer"), data(algorithm->getUnsortedVector()), algorithmName(algorithm->getName())
+    :   window(sf::VideoMode(windowWidth, windowHeight), "Sorting Visualizer"), 
+        data(algorithm->getUnsortedVector()), 
+        algorithmName(algorithm->getName())
 {
     barWidth = (float)windowWidth / (float)vectorSize;
 

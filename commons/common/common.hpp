@@ -28,5 +28,6 @@ extern unsigned int windowHeight;
 bool loadConfig();
 void createRainbow();
 sf::Color hsvToRgb(float hue, float saturation, float value);
+bool init();
 
 #endif //COMMON_HPP

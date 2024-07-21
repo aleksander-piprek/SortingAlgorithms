@@ -86,3 +86,14 @@ void createRainbow()
         rainbow[i] = hsvToRgb(hue, 1.0f, 1.0f); 
     }
 }
+
+bool init()
+{
+    if(!loadConfig())
+    {
+        std::cout << "Error in loading config\n";
+        return 1;
+    }
+
+    createRainbow();
+}
