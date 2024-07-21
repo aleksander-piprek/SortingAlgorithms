@@ -61,8 +61,11 @@ std::vector<int> MergeSort::mergeSort(std::vector<int> unsortedVector)
 
     leftSide = mergeSort(leftSide);
     rightSide = mergeSort(rightSide);
-    
-    return merge(leftSide, rightSide);
+
+    auto result = merge(leftSide, rightSide);
+    addState(result);
+
+    return result;
 }
 
 std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
@@ -97,6 +100,7 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
                 rightSide.erase(rightSide.begin() + right);
             }       
         }
+
     }
 }
 

@@ -13,6 +13,7 @@ class MergeSort : public Algorithm
 
         std::vector<int> mergeSort(std::vector<int> unsortedVector);
         std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide); 
+        void visualizeStep(std::vector<int>& vector);
 };
 
 

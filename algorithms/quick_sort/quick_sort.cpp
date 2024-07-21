@@ -55,10 +55,9 @@ std::vector<int> QuickSort::quickSort(std::vector<int> unsortedVector)
     // if(unsortedVector.size() <= 1)
         return unsortedVector;
 
-    // int pivot = unsortedVector[unsortedVector.size()-1];
-
-    // int left;
-    // int right;
+    int pivot = unsortedVector[unsortedVector.size()-1];
+    int left = unsortedVector[0];
+    int right = unsortedVector[unsortedVector.size()-1];
 
     // std::vector<int> leftOfPivot;
     // std::vector<int> rightOfPivot;

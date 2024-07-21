@@ -25,9 +25,22 @@ void Visualiser::run(Algorithm* algorithm)
         while (window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 window.close();      
-                
-        if(sorting)
-            data = algorithm->stepSort(data, i, sorting);
+
+        if(true)
+        {
+            if (!algorithm->getStateQueue().empty())
+            {
+                data = algorithm->getStateQueue().front();
+                algorithm->getStateQueue().pop();
+            }
+            else
+            {
+                sorting = false;
+            }
+        }
+
+        // if(sorting)
+        //     data = algorithm->stepSort(data, i, sorting);
 
         draw();
     }

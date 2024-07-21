@@ -23,22 +23,22 @@ int main()
     // Sort() from STL for comparison
     CppSort cppSort(vector.unsortedVector);
 
-    // Bubble Sort
-    BubbleSort BubbleSort(vector.unsortedVector);
+    // // Bubble Sort
+    // BubbleSort BubbleSort(vector.unsortedVector);
 
-    // Insertion Sort
-    InsertionSort InsertionSort(vector.unsortedVector);
+    // // Insertion Sort
+    // InsertionSort InsertionSort(vector.unsortedVector);
     
-    // Selection Sort
-    SelectionSort SelectionSort(vector.unsortedVector);
+    // // Selection Sort
+    // SelectionSort SelectionSort(vector.unsortedVector);
     
-    // Cocktail Sort
-    CocktailSort CocktailSort(vector.unsortedVector);
+    // // Cocktail Sort
+    // CocktailSort CocktailSort(vector.unsortedVector);
 
     // Merge Sort
     MergeSort MergeSort(vector.unsortedVector);
 
-    // Quick Sort
-    QuickSort QuickSort(vector.unsortedVector);
+    // // Quick Sort
+    // QuickSort QuickSort(vector.unsortedVector);
     return 0;
 }

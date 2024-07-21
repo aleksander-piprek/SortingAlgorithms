@@ -18,3 +18,8 @@ std::string Algorithm::getName()
 {
     return this->name;
 }
+
+void Algorithm::addState(const std::vector<int>& state)
+{
+    stateQueue.push(state);
+}
