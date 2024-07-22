@@ -46,7 +46,7 @@ $ git clone https://github.com/aleksander-piprek/SortingAlgorithms.git
 $ mkdir build
 $ cd build
 $ cmake ..
-$ cmake --build .
+$ make
 ~~~
 
 ## TODO:
@@ -64,3 +64,4 @@ $ cmake --build .
 * Time and memory complexity and usage
 * Display more information in GUI
 * Queue to upload data and visualise it on different thread
+* 
