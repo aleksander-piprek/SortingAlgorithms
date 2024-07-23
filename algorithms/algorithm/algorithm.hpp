@@ -14,7 +14,7 @@ class Algorithm
             : unsortedVector(unsortedVector), name(name) {}
         virtual ~Algorithm() = 0;
         virtual std::vector<int> sort(std::vector<int>& unsortedVector) = 0;
-        virtual void visualiseSort(std::vector<int>& unsortedVector) = 0;
+        virtual std::vector<int> visualiseSort(std::vector<int>& unsortedVector) = 0;
 
         std::vector<int> getUnsortedVector();
         void setVector(std::vector<int> vector) { unsortedVector = vector; }

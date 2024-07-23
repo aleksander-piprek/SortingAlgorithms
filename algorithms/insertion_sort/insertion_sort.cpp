@@ -72,7 +72,7 @@ std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-void InsertionSort::visualiseSort(std::vector<int>& unsortedVector)
+std::vector<int> InsertionSort::visualiseSort(std::vector<int>& unsortedVector)
 {
     for(int i = 1; i <= unsortedVector.size(); i++)
     {
@@ -98,4 +98,6 @@ void InsertionSort::visualiseSort(std::vector<int>& unsortedVector)
         
         blockingQueue.push(unsortedVector);        
     }
+    
+    return unsortedVector;    
 }

@@ -76,7 +76,7 @@ std::vector<int> CocktailSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-void CocktailSort::visualiseSort(std::vector<int>& unsortedVector)
+std::vector<int> CocktailSort::visualiseSort(std::vector<int>& unsortedVector)
 {
     for(int i = 0; i < unsortedVector.size(); i++)
     {
@@ -105,4 +105,6 @@ void CocktailSort::visualiseSort(std::vector<int>& unsortedVector)
 
         blockingQueue.push(unsortedVector);                    
     }
+    
+    return unsortedVector;    
 }

@@ -64,7 +64,7 @@ std::vector<int> SelectionSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-void SelectionSort::visualiseSort(std::vector<int>& unsortedVector)
+std::vector<int> SelectionSort::visualiseSort(std::vector<int>& unsortedVector)
 {
     for(int i = 0; i < unsortedVector.size(); i++)
     {
@@ -81,4 +81,6 @@ void SelectionSort::visualiseSort(std::vector<int>& unsortedVector)
         
         blockingQueue.push(unsortedVector);
     }
+    
+    return unsortedVector;    
 }

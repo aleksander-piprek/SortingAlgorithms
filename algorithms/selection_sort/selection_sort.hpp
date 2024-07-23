@@ -9,7 +9,7 @@ class SelectionSort : public Algorithm
         SelectionSort(std::vector<int> unsortedVector);
         
         std::vector<int> sort(std::vector<int>& unsortedVector) override;
-        void visualiseSort(std::vector<int>& unsortedVector) override;
+        std::vector<int> visualiseSort(std::vector<int>& unsortedVector) override;
 };
 
 #endif //SELECTION_SORT_HPP

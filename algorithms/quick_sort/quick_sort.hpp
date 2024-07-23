@@ -9,7 +9,7 @@ class QuickSort : public Algorithm
         QuickSort(std::vector<int> unsortedVector);
         
         std::vector<int> sort(std::vector<int>& unsortedVector) override;
-        void visualiseSort(std::vector<int>& unsortedVector) override;
+        std::vector<int> visualiseSort(std::vector<int>& unsortedVector) override;
         
         std::vector<int> quickSort(std::vector<int> unsortedVector);
         std::vector<int> partition(std::vector<int> unsortedVector); 

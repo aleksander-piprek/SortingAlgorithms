@@ -63,5 +63,3 @@ $ make
   
 * Time and memory complexity and usage
 * Display more information in GUI
-* Queue to upload data and visualise it on different thread
-* 

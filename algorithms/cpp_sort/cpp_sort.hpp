@@ -9,7 +9,7 @@ class CppSort : public Algorithm
         CppSort(std::vector<int> unsortedVector);
 
         std::vector<int> sort(std::vector<int>& unsortedVector) override;
-        void visualiseSort(std::vector<int>& unsortedVector) override {};
+        std::vector<int> visualiseSort(std::vector<int>& unsortedVector) override { return std::vector<int>(); }
 };
 
 #endif //CPP_SORT_HPP

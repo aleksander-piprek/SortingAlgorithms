@@ -65,7 +65,7 @@ std::vector<int> BubbleSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-void BubbleSort::visualiseSort(std::vector<int>& unsortedVector)
+std::vector<int> BubbleSort::visualiseSort(std::vector<int>& unsortedVector)
 {
     for(int i = 0; i < unsortedVector.size(); i++)
     {
@@ -85,4 +85,6 @@ void BubbleSort::visualiseSort(std::vector<int>& unsortedVector)
 
         blockingQueue.push(unsortedVector);        
     }
+    
+    return unsortedVector;    
 }

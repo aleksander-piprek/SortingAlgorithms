@@ -75,6 +75,7 @@ std::vector<int> QuickSort::partition(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-void QuickSort::visualiseSort(std::vector<int>& unsortedVector)
+std::vector<int> QuickSort::visualiseSort(std::vector<int>& unsortedVector)
 {
+    return std::vector<int>();
 }
