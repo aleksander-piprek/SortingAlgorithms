@@ -22,7 +22,8 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
             visualise.run(this);
             break;
         }
@@ -74,10 +75,6 @@ std::vector<int> QuickSort::partition(std::vector<int> unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> QuickSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
+void QuickSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-
-    ++i;
-
-    return unsortedVector;
 }

@@ -22,8 +22,9 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
-            visualise.run(this);  
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
+            visualise.run(this);
             break;
         }
     }    
@@ -55,6 +56,7 @@ std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
                 }
             }     
         }
+        blockingQueue.push(unsortedVector);        
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
@@ -70,35 +72,30 @@ std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> InsertionSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
+void InsertionSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-    for(int j = i - 1; j >= 0; j--)
+    for(int i = 1; i <= unsortedVector.size(); i++)
     {
-        if(i == vectorSize)
+        for(int j = i - 1; j >= 0; j--)
         {
-            sorting = false;
-            break;
+            if(unsortedVector[i] < unsortedVector[j])
+            {
+                if(j == 0)
+                {
+                    unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                    unsortedVector.erase(unsortedVector.begin() + i + 1);
+                    break;
+                }
+
+                if(unsortedVector[i] > unsortedVector[j-1])
+                {
+                    unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
+                    unsortedVector.erase(unsortedVector.begin() + i + 1);
+                    break;
+                }
+            }     
         }
-    
-        if(unsortedVector[i] < unsortedVector[j])
-        {
-            if(j == 0)
-            {
-                unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
-                unsortedVector.erase(unsortedVector.begin() + i + 1);
-                break;
-            }
-
-            if(unsortedVector[i] > unsortedVector[j-1])
-            {
-                unsortedVector.insert(unsortedVector.begin() + j, unsortedVector[i]);
-                unsortedVector.erase(unsortedVector.begin() + i + 1);
-                break;
-            }
-        }     
+        
+        blockingQueue.push(unsortedVector);        
     }
-
-    ++i;
-
-    return unsortedVector;
 }

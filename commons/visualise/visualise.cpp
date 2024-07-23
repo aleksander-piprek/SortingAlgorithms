@@ -3,10 +3,11 @@
 
 class Algorithm;
 
-Visualiser::Visualiser(Algorithm* algorithm)
+Visualiser::Visualiser(Algorithm* algorithm, BlockingQueue<std::vector<int>>& queue)
     :   window(sf::VideoMode(windowWidth, windowHeight), "Sorting Visualizer"), 
         data(algorithm->getUnsortedVector()), 
-        algorithmName(algorithm->getName())
+        algorithmName(algorithm->getName()),
+        blockingQueue(queue)
 {
     barWidth = (float)windowWidth / (float)vectorSize;
 
@@ -27,9 +28,6 @@ void Visualiser::run(Algorithm* algorithm)
         while (window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 window.close();      
-                
-        if(sorting)
-            data = algorithm->stepSort(data, i, sorting);
 
         draw();
     }
@@ -38,6 +36,8 @@ void Visualiser::run(Algorithm* algorithm)
 void Visualiser::draw()
 {
     window.clear(sf::Color::Black);
+
+    blockingQueue.tryPop(data);
 
     for (size_t k = 0; k < data.size(); ++k) 
     {

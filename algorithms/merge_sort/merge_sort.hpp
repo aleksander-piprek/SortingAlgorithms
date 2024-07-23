@@ -9,7 +9,7 @@ class MergeSort : public Algorithm
         MergeSort(std::vector<int> unsortedVector);
         
         std::vector<int> sort(std::vector<int>& unsortedVector) override;
-        std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
+        void visualiseSort(std::vector<int>& unsortedVector) override;
 
         std::vector<int> mergeSort(std::vector<int> unsortedVector);
         std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide); 

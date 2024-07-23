@@ -77,7 +77,7 @@ sf::Color hsvToRgb(float hue, float saturation, float value)
     return sf::Color((r + m) * 255, (g + m) * 255, (b + m) * 255);
 }
 
-void createRainbow()
+bool createRainbow()
 {
     float hueIncrement = 360.0f / vectorSize;
     for (int i = 0; i <= vectorSize; ++i)
@@ -85,6 +85,7 @@ void createRainbow()
         float hue = i * hueIncrement;
         rainbow[i] = hsvToRgb(hue, 1.0f, 1.0f); 
     }
+    return true;
 }
 
 bool init()
@@ -95,5 +96,5 @@ bool init()
         return 1;
     }
 
-    createRainbow();
+    return createRainbow();
 }

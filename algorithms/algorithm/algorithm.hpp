@@ -14,12 +14,14 @@ class Algorithm
             : unsortedVector(unsortedVector), name(name) {}
         virtual ~Algorithm() = 0;
         virtual std::vector<int> sort(std::vector<int>& unsortedVector) = 0;
-        virtual std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) = 0;
+        virtual void visualiseSort(std::vector<int>& unsortedVector) = 0;
 
         std::vector<int> getUnsortedVector();
         void setVector(std::vector<int> vector) { unsortedVector = vector; }
         std::string getName();
         void displayVector();
+
+        BlockingQueue<std::vector<int>> blockingQueue;
 };
 
 #endif //ALGORITHM_HPP

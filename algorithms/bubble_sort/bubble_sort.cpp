@@ -22,7 +22,8 @@ BubbleSort::BubbleSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
             visualise.run(this);
             break;
         }
@@ -42,9 +43,9 @@ std::vector<int> BubbleSort::sort(std::vector<int>& unsortedVector)
         {
             if(unsortedVector[j] > unsortedVector[j+1])
             {
-                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);
                 isSwapped = true;
-            }
+            } 
         }
 
         if(!isSwapped)
@@ -64,29 +65,24 @@ std::vector<int> BubbleSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> BubbleSort::stepSort(std::vector<int> unsortedVector, int& i, bool& sorting)
+void BubbleSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-    if (i >= unsortedVector.size() - 1)
+    for(int i = 0; i < unsortedVector.size(); i++)
     {
-        sorting = false;
-        return unsortedVector;
-    }
-
-    isSwapped = false;
-
-    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
-    {
-        if(unsortedVector[j] > unsortedVector[j+1])
+        isSwapped = false;
+ 
+        for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
         {
-            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
-            isSwapped = true;
+            if(unsortedVector[j] > unsortedVector[j+1])
+            {
+                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);
+                isSwapped = true;
+            } 
         }
+
+        if(!isSwapped)
+            break; 
+
+        blockingQueue.push(unsortedVector);        
     }
-
-    if(!isSwapped)
-        sorting = false;
-
-    ++i;
-
-    return unsortedVector;
 }

@@ -10,7 +10,7 @@ class Visualiser
     friend class Algorithm;
     
     public:
-        Visualiser(Algorithm* algorithm);
+        Visualiser(Algorithm* algorithm, BlockingQueue<std::vector<int>>& queue);
         void run(Algorithm* algorithm);
 
     private:
@@ -19,13 +19,12 @@ class Visualiser
         sf::RenderWindow window;
         sf::Font font;
         sf::Text text;
+        float barWidth;
 
         std::vector<int> data;
         std::string algorithmName;
 
-        float barWidth;
-        bool sorting = true;
-        int i = 0;
+        BlockingQueue<std::vector<int>>& blockingQueue;
 };
 
 #endif //VISUALISE_HPP

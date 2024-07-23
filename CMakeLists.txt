@@ -14,7 +14,6 @@ add_executable(sorting_algorithms "main.cpp"
                                   "commons/random/random.cpp"
                                   "commons/common/common.cpp"
                                   "commons/visualise/visualise.cpp"
-                                  "commons/queue/blocking_queue.cpp"
                                   
                                   "algorithms/algorithm/algorithm.cpp"
                                   "algorithms/cpp_sort/cpp_sort.cpp"

@@ -11,7 +11,7 @@ class CocktailSort : public Algorithm
         CocktailSort(std::vector<int> unsortedVector);
 
         std::vector<int> sort(std::vector<int>& unsortedVector) override;
-        std::vector<int> stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting) override;
+        void visualiseSort(std::vector<int>& unsortedVector) override;
 };
 
 #endif //COCKTAIL_SORT_HPP

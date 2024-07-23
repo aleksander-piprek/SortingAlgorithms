@@ -22,7 +22,8 @@ CocktailSort::CocktailSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
             visualise.run(this);
             break;
         }
@@ -55,6 +56,8 @@ std::vector<int> CocktailSort::sort(std::vector<int>& unsortedVector)
                 isSwapped = true;
             }
         }
+
+        blockingQueue.push(unsortedVector);
         
         if(!isSwapped)
             break; 
@@ -73,17 +76,33 @@ std::vector<int> CocktailSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> CocktailSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
-{        
-    for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
-        if(unsortedVector[j] > unsortedVector[j+1])
-            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
-    
-    for(int j = unsortedVector.size() - 1 - i; j > 0; j--)
-        if(unsortedVector[j] < unsortedVector[j-1])
-            iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j - 1);     
+void CocktailSort::visualiseSort(std::vector<int>& unsortedVector)
+{
+    for(int i = 0; i < unsortedVector.size(); i++)
+    {
+        isSwapped = false;
+ 
+        for(int j = 0; j < unsortedVector.size() - 1 - i; j++)
+        {
+            if(unsortedVector[j] > unsortedVector[j+1])
+            {
+                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j + 1);     
+                isSwapped = true;
+            }
+        }
+        
+        for(int j = unsortedVector.size() - 1 - i; j > 0; j--)
+        {
+            if(unsortedVector[j] < unsortedVector[j-1])
+            {
+                iter_swap(unsortedVector.begin() + j, unsortedVector.begin() + j - 1);     
+                isSwapped = true;
+            }
+        }
+            
+        if(!isSwapped)
+            break; 
 
-    ++i;
-
-    return unsortedVector;
+        blockingQueue.push(unsortedVector);                    
+    }
 }

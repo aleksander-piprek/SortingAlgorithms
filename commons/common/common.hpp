@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <map>
 #include <SFML/Graphics.hpp>
+#include "../queue/blocking_queue.hpp"
 
 const char configPath[] = "../config/default.cfg";
 
@@ -26,7 +27,7 @@ extern unsigned int windowWidth;
 extern unsigned int windowHeight;
 
 bool loadConfig();
-void createRainbow();
+bool createRainbow();
 sf::Color hsvToRgb(float hue, float saturation, float value);
 bool init();
 

@@ -22,7 +22,8 @@ SelectionSort::SelectionSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
             visualise.run(this);
             break;
         }
@@ -47,6 +48,7 @@ std::vector<int> SelectionSort::sort(std::vector<int>& unsortedVector)
         auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
         auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
         std::iter_swap(it1, it2);    
+        blockingQueue.push(unsortedVector);
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();
@@ -62,26 +64,21 @@ std::vector<int> SelectionSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> SelectionSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
+void SelectionSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-    if(i == vectorSize)
+    for(int i = 0; i < unsortedVector.size(); i++)
     {
-        sorting = false;
-        return unsortedVector;
-    }    
-    
-    int min = unsortedVector[i];
-    int temp = min;
+        int min = unsortedVector[i];
+        int temp = min;
 
-    for(int j = i; j < unsortedVector.size(); j++)
-        if(unsortedVector[j] < min)
-            min = unsortedVector[j];
+        for(int j = i; j < unsortedVector.size(); j++)
+            if(unsortedVector[j] < min)
+                min = unsortedVector[j];
 
-    auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
-    auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
-    std::iter_swap(it1, it2);  
-
-    ++i;
-
-    return unsortedVector;
+        auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
+        auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
+        std::iter_swap(it1, it2);    
+        
+        blockingQueue.push(unsortedVector);
+    }
 }

@@ -22,7 +22,8 @@ MergeSort::MergeSort(std::vector<int> unsortedVector)
 
         case ANIMATE:
         {
-            Visualiser visualise(this);
+            visualiseSort(unsortedVector);
+            Visualiser visualise(this, blockingQueue);
             visualise.run(this);
             break;
         }
@@ -62,7 +63,9 @@ std::vector<int> MergeSort::mergeSort(std::vector<int> unsortedVector)
     leftSide = mergeSort(leftSide);
     rightSide = mergeSort(rightSide);
     
-    return merge(leftSide, rightSide);
+    auto result = merge(leftSide, rightSide);
+
+    return result;
 }
 
 std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> rightSide)
@@ -86,6 +89,7 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
             {
                 rightSide.insert(rightSide.begin() + right, leftSide[left]);
                 leftSide.erase(leftSide.begin() + left);
+                blockingQueue.push(rightSide);
             }
         }
         else if(rightSideElement > leftSideElement)
@@ -95,15 +99,14 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
             {
                 leftSide.insert(leftSide.begin() + left, rightSide[right]);
                 rightSide.erase(rightSide.begin() + right);
+                blockingQueue.push(leftSide);
             }       
         }
     }
 }
 
-std::vector<int> MergeSort::stepSort(std::vector<int> unsortedVector, int& i,  bool& sorting)
+void MergeSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-
-    ++i;
-
-    return unsortedVector;
+    unsortedVector = mergeSort(unsortedVector);
+    blockingQueue.push(unsortedVector);
 }
