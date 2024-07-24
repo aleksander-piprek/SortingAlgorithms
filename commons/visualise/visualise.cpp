@@ -39,6 +39,9 @@ void Visualiser::draw()
 
     blockingQueue.tryPop(data);
 
+    // for(int i = data.size(); i < vectorSize; i++)
+    //     data.push_back(unsorted[i]);
+
     for (size_t k = 0; k < data.size(); ++k) 
     {
         sf::RectangleShape bar;

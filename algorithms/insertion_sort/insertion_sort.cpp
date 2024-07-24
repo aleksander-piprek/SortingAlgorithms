@@ -56,7 +56,6 @@ std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
                 }
             }     
         }
-        blockingQueue.push(unsortedVector);        
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();

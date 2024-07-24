@@ -48,7 +48,6 @@ std::vector<int> SelectionSort::sort(std::vector<int>& unsortedVector)
         auto it1 = std::find(unsortedVector.begin(), unsortedVector.end(), temp);
         auto it2 = std::find(unsortedVector.begin(), unsortedVector.end(), min);
         std::iter_swap(it1, it2);    
-        blockingQueue.push(unsortedVector);
     }
 
     auto end_time = std::chrono::high_resolution_clock::now();

@@ -7,6 +7,7 @@
 ApplicationMode applicationMode = ANIMATE;
 int vectorSize = 1000;
 std::vector<int> correct;
+std::vector<int> unsorted;
 
 unsigned int windowWidth = 1280;
 unsigned int windowHeight = 720;

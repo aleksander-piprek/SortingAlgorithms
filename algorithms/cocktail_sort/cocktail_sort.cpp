@@ -57,8 +57,6 @@ std::vector<int> CocktailSort::sort(std::vector<int>& unsortedVector)
             }
         }
 
-        blockingQueue.push(unsortedVector);
-        
         if(!isSwapped)
             break; 
     }

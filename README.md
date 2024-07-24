@@ -26,12 +26,12 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 | Algorithm   	  | 1000    | 2500    | 5000      | 10000     |
 |-----------------|---------|---------|-----------|-----------|
 | cpp_sort	      | ~ 0 ms  |	~ 0 ms  | ~ 0ms     | ~ 1 ms    |
-| bubble_sort     | ~ 7 ms  | ~ 51 ms | ~ 172 ms  | ~ 644 ms  |
-| insertion_sort  | ~ 1 ms  | ~ 10 ms | ~ 39 ms   | ~ 150 ms  |
-| selection_sort  | ~ 6 ms  | ~ 36 ms | ~ 144 ms  | ~ 565 ms  |
-| cocktail_sort   | ~ 6 ms  | ~ 38 ms | ~ 145 ms  | ~ 581 ms  |
-| merge_sort      | ~ 2 ms  | ~ 7 ms  | ~ 15 ms   | ~ 32 ms   |
-| quick_sort      | ~ ms  | ~ ms  | ~ ms   | ~ ms   |
+| bubble_sort     | ~ 6 ms  | ~ 41 ms | ~ 174 ms  | ~ 650 ms  |
+| insertion_sort  | ~ 1 ms  | ~ 10 ms | ~ 37 ms   | ~ 147 ms  |
+| selection_sort  | ~ 5 ms  | ~ 34 ms | ~ 137 ms  | ~ 544 ms  |
+| cocktail_sort   | ~ 6 ms  | ~ 38 ms | ~ 158 ms  | ~ 615 ms  |
+| merge_sort      | ~ 2 ms  | ~ 7 ms  | ~ 14 ms   | ~ 32 ms   |
+| quick_sort      | ~ 0 ms  | ~ 0 ms  | ~ 0 ms    | ~ 1  ms   |
 
 ## Dependencies installation
 ~~~
@@ -56,7 +56,7 @@ $ make
   - [x] Selection Sort
   - [x] Cocktail Shaker Sort
   - [x] Merge Sort
-  - [ ] Quick Sort
+  - [x] Quick Sort
   - [ ] Heap Sort
   - [ ] Radix Sort
   - [ ] Intro Sort

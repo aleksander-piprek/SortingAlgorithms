@@ -21,6 +21,7 @@ enum ApplicationMode
 extern ApplicationMode applicationMode;
 extern int vectorSize;
 extern std::vector<int> correct;
+extern std::vector<int> unsorted;
 extern std::map<int, sf::Color> rainbow;
 
 extern unsigned int windowWidth;

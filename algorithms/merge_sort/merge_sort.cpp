@@ -113,44 +113,45 @@ std::vector<int> MergeSort::visualiseSort(std::vector<int>& unsortedVector)
     leftSide = visualiseSort(leftSide);
     rightSide = visualiseSort(rightSide);
     
-    auto result = visualiseMerge(leftSide, rightSide);
-    
-    return result;
+    return visualiseMerge(unsortedVector, leftSide, rightSide, 0, halfPoint);
 }
 
-std::vector<int> MergeSort::visualiseMerge(std::vector<int> leftSide, std::vector<int> rightSide)
+std::vector<int> MergeSort::visualiseMerge(std::vector<int>& array, std::vector<int> leftSide, std::vector<int> rightSide, int leftStart, int rightStart)
 {
-    int left = 0;
-    int right = 0;
-    while(1)
-    {
-        if(leftSide.size() == 0)
-            return rightSide;
-        else if(rightSide.size() == 0)
-            return leftSide;
+    int left = 0, right = 0;
+    int index = leftStart;
 
-        int leftSideElement = leftSide[left];
-        int rightSideElement = rightSide[right];
-        
-        if(leftSideElement > rightSideElement)
+    while (left < leftSide.size() && right < rightSide.size())
+    {
+        if (leftSide[left] <= rightSide[right])
         {
-            right++;
-            if(leftSideElement < rightSide[right] || right == rightSide.size())
-            {
-                rightSide.insert(rightSide.begin() + right, leftSide[left]);
-                leftSide.erase(leftSide.begin() + left);
-                blockingQueue.push(rightSide);
-            }
-        }
-        else if(rightSideElement > leftSideElement)
-        {
+            array[index] = leftSide[left];
             left++;
-            if(rightSideElement < leftSide[left] || left == leftSide.size())
-            {
-                leftSide.insert(leftSide.begin() + left, rightSide[right]);
-                rightSide.erase(rightSide.begin() + right);
-                blockingQueue.push(leftSide);
-            }       
         }
+        else
+        {
+            array[index] = rightSide[right];
+            right++;
+        }
+        blockingQueue.push(array);
+        index++;
     }
+
+    while (left < leftSide.size())
+    {
+        array[index] = leftSide[left];
+        left++;
+        blockingQueue.push(array);
+        index++;
+    }
+
+    while (right < rightSide.size())
+    {
+        array[index] = rightSide[right];
+        right++;
+        blockingQueue.push(array);
+        index++;
+    }
+
+    return array;
 }

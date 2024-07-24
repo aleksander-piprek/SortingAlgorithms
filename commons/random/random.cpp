@@ -64,5 +64,7 @@ std::vector<int> Random::createRandomVector(int vectorSize)
             unsortedVector.push_back(random);
     }
 
+    unsorted = unsortedVector;
+
     return unsortedVector;
 }

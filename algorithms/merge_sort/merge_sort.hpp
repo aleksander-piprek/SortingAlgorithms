@@ -2,6 +2,7 @@
 #define MERGE_SORT_HPP
 
 #include "../algorithm/algorithm.hpp"
+#include <map>
 
 class MergeSort : public Algorithm
 {
@@ -14,8 +15,7 @@ class MergeSort : public Algorithm
         std::vector<int> mergeSort(std::vector<int> unsortedVector);
         std::vector<int> merge(std::vector<int> leftSide, std::vector<int> rightSide); 
 
-        std::vector<int> visualiseMerge(std::vector<int> leftSide, std::vector<int> rightSide);
+        std::vector<int> visualiseMerge(std::vector<int>& array, std::vector<int> leftSide, std::vector<int> rightSide, int leftStart, int rightStart);
 };
-
 
 #endif //MERGE_SORT_HPP
