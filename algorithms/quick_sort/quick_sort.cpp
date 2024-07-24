@@ -36,7 +36,7 @@ std::vector<int> QuickSort::sort(std::vector<int>& unsortedVector)
     
     auto start_time = std::chrono::high_resolution_clock::now();
 
-    unsortedVector = quickSort(unsortedVector);
+    quickSort(unsortedVector, 0, unsortedVector.size() - 1);
 
     auto end_time = std::chrono::high_resolution_clock::now();
     auto time = end_time - start_time;
@@ -51,28 +51,38 @@ std::vector<int> QuickSort::sort(std::vector<int>& unsortedVector)
     return unsortedVector;
 }
 
-std::vector<int> QuickSort::quickSort(std::vector<int> unsortedVector)
+void QuickSort::quickSort(std::vector<int>& unsortedVector, int left, int right)
 {
-    // if(unsortedVector.size() <= 1)
-        return unsortedVector;
+    if(right <= left)
+        return;
 
-    // int pivot = unsortedVector[unsortedVector.size()-1];
+    int pivot = unsortedVector[left + (right - left) / 2];
+    int i = left;
+    int j = right;
 
-    // int left;
-    // int right;
+    while(i <= j)
+    {
+        while(unsortedVector[i] < pivot)
+            ++i;
+        
+        while(unsortedVector[j] > pivot)
+            --j;
 
-    // std::vector<int> leftOfPivot;
-    // std::vector<int> rightOfPivot;
+        if(i <= j)
+        {
+            iter_swap(unsortedVector.begin() + i, unsortedVector.begin() + j);            
+            ++i;
+            --j;
+        }
 
-    // partition(leftOfPivot);
-    // partition(rightOfPivot);
 
-    // return quickSort();
-}
 
-std::vector<int> QuickSort::partition(std::vector<int> unsortedVector)
-{
-    return unsortedVector;
+    }
+    
+    if(j > left)
+        quickSort(unsortedVector, left, j);
+    if(i < right)
+        quickSort(unsortedVector, i, right);
 }
 
 std::vector<int> QuickSort::visualiseSort(std::vector<int>& unsortedVector)
