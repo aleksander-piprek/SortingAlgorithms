@@ -4,11 +4,11 @@ Repository is dedicated to create a simple framework to test sorting algorithms.
 1. Create **Random** object.
 2. Create an algorithm object from any of the implemented sorting algorithms
 3. Pass the created vector in Step 1. as a parameter of given sorting algorithm to test it
-4. User has to change config having **applicationMode** and **vectorSize** depending on type of application:
-- **VectorSize** is the size of the initial vector
--  **TEST** is just going to check if algorithms work correctly and print only time.
-- **PRINT** is going to check correctness, print time and sorted vector.
-- **ANIMATE** is going to show the sorting algorithm working in real time.
+4. User has to change config having paramaters defined below:
+- **VectorSize** is the size of the initial vector to be sorted
+- **TEST** if user wants to print time of solving and correctness
+- **PRINT** if user wants to print sorted vector, time of solving and correctness
+- **ANIMATE** is user wants to see the visualisation of sorting algorithm
 - **WindowWidth** is the width of the window in pixels
 - **WindowHeight** is the height of the window in pixels
 
@@ -60,6 +60,5 @@ $ make
   - [ ] Heap Sort
   - [ ] Radix Sort
   - [ ] Intro Sort
-  
-* Time and memory complexity and usage
-* Display more information in GUI
+* Memory usage
+* Display more information in visualisation
