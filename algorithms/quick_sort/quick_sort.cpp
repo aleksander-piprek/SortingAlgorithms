@@ -7,14 +7,14 @@ QuickSort::QuickSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
         case PRINT: 
         {
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             displayVector();
             std::cout << std::endl;
             break;
@@ -48,6 +48,8 @@ std::vector<int> QuickSort::sort(std::vector<int>& unsortedVector)
 
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
+    setVector(unsortedVector);
+
     return unsortedVector;
 }
 
@@ -74,9 +76,6 @@ void QuickSort::quickSort(std::vector<int>& unsortedVector, int left, int right)
             ++i;
             --j;
         }
-
-
-
     }
     
     if(j > left)
@@ -86,6 +85,33 @@ void QuickSort::quickSort(std::vector<int>& unsortedVector, int left, int right)
 }
 
 std::vector<int> QuickSort::visualiseSort(std::vector<int>& unsortedVector)
-{
-    return std::vector<int>();
+{    
+    // if(right <= left)
+    //     return;
+
+    // int pivot = unsortedVector[left + (right - left) / 2];
+    // int i = left;
+    // int j = right;
+
+    // while(i <= j)
+    // {
+    //     while(unsortedVector[i] < pivot)
+    //         ++i;
+        
+    //     while(unsortedVector[j] > pivot)
+    //         --j;
+
+    //     if(i <= j)
+    //     {
+    //         iter_swap(unsortedVector.begin() + i, unsortedVector.begin() + j);            
+    //         ++i;
+    //         --j;
+    //     }
+    // }
+    
+    // if(j > left)
+    //     quickSort(unsortedVector, left, j);
+    // if(i < right)
+    //     quickSort(unsortedVector, i, right);
+    // return std::vector<int>();
 }

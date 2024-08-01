@@ -7,14 +7,14 @@ InsertionSort::InsertionSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {       
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             std::cout << std::endl;            
             break;
         }
 
         case PRINT: 
         {
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             displayVector();
             std::cout << std::endl;            
             break;
@@ -67,6 +67,8 @@ std::vector<int> InsertionSort::sort(std::vector<int>& unsortedVector)
         std::cout << "[Error]\n";
 
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
+
+    setVector(unsortedVector);
 
     return unsortedVector;
 }

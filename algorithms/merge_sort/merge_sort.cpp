@@ -7,14 +7,14 @@ MergeSort::MergeSort(std::vector<int> unsortedVector)
     {
         case TEST:
         {
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             std::cout << std::endl;
             break;
         }
 
         case PRINT: 
         {
-            setVector(sort(unsortedVector));
+            sort(unsortedVector);
             displayVector();
             std::cout << std::endl;
             break;
@@ -48,6 +48,8 @@ std::vector<int> MergeSort::sort(std::vector<int>& unsortedVector)
 
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
+    // setVector(unsortedVector);
+
     return unsortedVector;
 }
 
@@ -70,6 +72,7 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
 {
     int left = 0;
     int right = 0;
+
     while(1)
     {
         if(leftSide.size() == 0)
@@ -103,55 +106,55 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
 
 std::vector<int> MergeSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-    if(unsortedVector.size() <= 1)
-        return unsortedVector;
+    // if(unsortedVector.size() <= 1)
+    //     return unsortedVector;
 
-    auto halfPoint = unsortedVector.size() / 2;
-    std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
-    std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
+    // auto halfPoint = unsortedVector.size() / 2;
+    // std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
+    // std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
 
-    leftSide = visualiseSort(leftSide);
-    rightSide = visualiseSort(rightSide);
+    // leftSide = visualiseSort(leftSide);
+    // rightSide = visualiseSort(rightSide);
     
-    return visualiseMerge(unsortedVector, leftSide, rightSide, 0, halfPoint);
+    // return visualiseMerge(unsortedVector, leftSide, rightSide, 0, halfPoint);
 }
 
 std::vector<int> MergeSort::visualiseMerge(std::vector<int>& array, std::vector<int> leftSide, std::vector<int> rightSide, int leftStart, int rightStart)
 {
-    int left = 0, right = 0;
-    int index = leftStart;
+    // int left = 0, right = 0;
+    // int index = leftStart;
 
-    while (left < leftSide.size() && right < rightSide.size())
-    {
-        if (leftSide[left] <= rightSide[right])
-        {
-            array[index] = leftSide[left];
-            left++;
-        }
-        else
-        {
-            array[index] = rightSide[right];
-            right++;
-        }
-        blockingQueue.push(array);
-        index++;
-    }
+    // while (left < leftSide.size() && right < rightSide.size())
+    // {
+    //     if (leftSide[left] <= rightSide[right])
+    //     {
+    //         array[index] = leftSide[left];
+    //         left++;
+    //     }
+    //     else
+    //     {
+    //         array[index] = rightSide[right];
+    //         right++;
+    //     }
+    //     blockingQueue.push(array);
+    //     index++;
+    // }
 
-    while (left < leftSide.size())
-    {
-        array[index] = leftSide[left];
-        left++;
-        blockingQueue.push(array);
-        index++;
-    }
+    // while (left < leftSide.size())
+    // {
+    //     array[index] = leftSide[left];
+    //     left++;
+    //     blockingQueue.push(array);
+    //     index++;
+    // }
 
-    while (right < rightSide.size())
-    {
-        array[index] = rightSide[right];
-        right++;
-        blockingQueue.push(array);
-        index++;
-    }
+    // while (right < rightSide.size())
+    // {
+    //     array[index] = rightSide[right];
+    //     right++;
+    //     blockingQueue.push(array);
+    //     index++;
+    // }
 
-    return array;
+    // return array;
 }

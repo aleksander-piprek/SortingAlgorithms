@@ -11,7 +11,7 @@ Visualiser::Visualiser(Algorithm* algorithm, BlockingQueue<std::vector<int>>& qu
 {
     barWidth = (float)windowWidth / (float)vectorSize;
 
-    if (!font.loadFromFile("../data/ibm-dos-vga-9x16.ttf"))
+    if (!font.loadFromFile("../resources/ibm-dos-vga-9x16.ttf"))
         std::cout << "Font could not be loaded\n";    
     
     text.setFont(font);
@@ -38,9 +38,6 @@ void Visualiser::draw()
     window.clear(sf::Color::Black);
 
     blockingQueue.tryPop(data);
-
-    // for(int i = data.size(); i < vectorSize; i++)
-    //     data.push_back(unsorted[i]);
 
     for (size_t k = 0; k < data.size(); ++k) 
     {
