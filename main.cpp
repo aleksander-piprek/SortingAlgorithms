@@ -6,6 +6,7 @@
 #include "algorithms/cocktail_sort/cocktail_sort.hpp"
 #include "algorithms/merge_sort/merge_sort.hpp"
 #include "algorithms/quick_sort/quick_sort.hpp"
+#include "algorithms/heap_sort/heap_sort.hpp"
 
 int main()
 {
@@ -34,5 +35,9 @@ int main()
 
     // Quick Sort
     QuickSort QuickSort(vector.unsortedVector);
+
+    // Heap Sort
+    HeapSort HeapSort(vector.unsortedVector);
+
     return 0;
 }

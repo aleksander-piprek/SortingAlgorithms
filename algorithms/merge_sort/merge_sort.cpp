@@ -48,7 +48,7 @@ std::vector<int> MergeSort::sort(std::vector<int>& unsortedVector)
 
     std::cout << "Time: " << time/std::chrono::milliseconds(1) << " ms\n";    
 
-    // setVector(unsortedVector);
+    setVector(unsortedVector);
 
     return unsortedVector;
 }
@@ -58,7 +58,7 @@ std::vector<int> MergeSort::mergeSort(std::vector<int> unsortedVector)
     if(unsortedVector.size() <= 1)
         return unsortedVector;
 
-    auto halfPoint = unsortedVector.size() / 2;
+    int halfPoint = unsortedVector.size() / 2;
     std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
     std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
 
@@ -106,55 +106,53 @@ std::vector<int> MergeSort::merge(std::vector<int> leftSide, std::vector<int> ri
 
 std::vector<int> MergeSort::visualiseSort(std::vector<int>& unsortedVector)
 {
-    // if(unsortedVector.size() <= 1)
-    //     return unsortedVector;
+    if(unsortedVector.size() <= 1)
+        return unsortedVector;
 
-    // auto halfPoint = unsortedVector.size() / 2;
-    // std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
-    // std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
+    int halfPoint = unsortedVector.size() / 2;
+    std::vector<int> leftSide(unsortedVector.begin(), unsortedVector.begin() + halfPoint);
+    std::vector<int> rightSide(unsortedVector.begin() + halfPoint, unsortedVector.end());
 
-    // leftSide = visualiseSort(leftSide);
-    // rightSide = visualiseSort(rightSide);
+    leftSide = visualiseSort(leftSide);
+    rightSide = visualiseSort(rightSide);
     
-    // return visualiseMerge(unsortedVector, leftSide, rightSide, 0, halfPoint);
+    return visualiseMerge(unsortedVector, leftSide, rightSide, 0, halfPoint);
 }
 
 std::vector<int> MergeSort::visualiseMerge(std::vector<int>& array, std::vector<int> leftSide, std::vector<int> rightSide, int leftStart, int rightStart)
 {
-    // int left = 0, right = 0;
-    // int index = leftStart;
+    int left = 0;
+    int right = 0;
 
-    // while (left < leftSide.size() && right < rightSide.size())
-    // {
-    //     if (leftSide[left] <= rightSide[right])
-    //     {
-    //         array[index] = leftSide[left];
-    //         left++;
-    //     }
-    //     else
-    //     {
-    //         array[index] = rightSide[right];
-    //         right++;
-    //     }
-    //     blockingQueue.push(array);
-    //     index++;
-    // }
-
-    // while (left < leftSide.size())
-    // {
-    //     array[index] = leftSide[left];
-    //     left++;
-    //     blockingQueue.push(array);
-    //     index++;
-    // }
-
-    // while (right < rightSide.size())
-    // {
-    //     array[index] = rightSide[right];
-    //     right++;
-    //     blockingQueue.push(array);
-    //     index++;
-    // }
-
-    // return array;
+    while(1)
+    {
+        if(leftSide.size() == 0)
+            return rightSide;
+        else if(rightSide.size() == 0)
+            return leftSide;
+        
+        int leftSideElement = leftSide[left];
+        int rightSideElement = rightSide[right];
+        
+        if(leftSideElement > rightSideElement)
+        {
+            right++;
+            if(leftSideElement < rightSide[right] || right == rightSide.size())
+            {
+                rightSide.insert(rightSide.begin() + right, leftSide[left]);
+                leftSide.erase(leftSide.begin() + left);
+                blockingQueue.push(rightSide);
+            }
+        }
+        else if(rightSideElement > leftSideElement)
+        {
+            left++;
+            if(rightSideElement < leftSide[left] || left == leftSide.size())
+            {
+                leftSide.insert(leftSide.begin() + left, rightSide[right]);
+                rightSide.erase(rightSide.begin() + right);
+                blockingQueue.push(leftSide);    
+            }
+        }
+    }
 }

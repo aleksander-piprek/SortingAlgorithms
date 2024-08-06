@@ -22,6 +22,7 @@ add_executable(sorting_algorithms "main.cpp"
                                   "algorithms/selection_sort/selection_sort.cpp"
                                   "algorithms/cocktail_sort/cocktail_sort.cpp"
                                   "algorithms/merge_sort/merge_sort.cpp"
-                                  "algorithms/quick_sort/quick_sort.cpp")
+                                  "algorithms/quick_sort/quick_sort.cpp"
+                                  "algorithms/heap_sort/heap_sort.cpp")
 
 target_link_libraries(sorting_algorithms sfml-graphics sfml-audio sfml-system)
